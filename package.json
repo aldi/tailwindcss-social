@@ -1,0 +1,84 @@
+{
+  "name": "tailwindcss-social",
+  "description": "Social Buttons and Colors for TailwindCSS",
+  "version": "0.0.0",
+  "author": {
+    "name": "Aldi Duzha",
+    "url": "https://github.com/aldi"
+  },
+  "homepage": "https://aldi.github.io/tailwindcss-social",
+  "license": "MIT",
+  "type": "module",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "jsdelivr": "css/all.min.css",
+  "unpkg": "css/all.min.css",
+  "style": "css/all.min.css",
+  "exports": {
+    ".": "./src/index.js",
+    "./css": "./css/all.min.css",
+    "./css/*": "./css/*"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "src",
+    "css",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "peerDependencies": {
+    "tailwindcss": ">=4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "tailwindcss": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "cssnano": "^7.0.6",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "globals": "^17.0.0",
+    "postcss": "^8.4.49",
+    "prettier": "^3.8.0",
+    "rimraf": "^6.1.2"
+  },
+  "scripts": {
+    "build": "npm run clean && node scripts/build.js",
+    "clean": "rimraf css",
+    "check:providers": "node scripts/check-provider-sync.js",
+    "test": "node --test",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "prepublishOnly": "npm run lint && npm run build"
+  },
+  "keywords": [
+    "tailwindcss",
+    "tailwind",
+    "social",
+    "tailwindcss-social",
+    "buttons",
+    "colors",
+    "providers",
+    "login",
+    "css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aldi/tailwindcss-social.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aldi/tailwindcss-social/issues"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}

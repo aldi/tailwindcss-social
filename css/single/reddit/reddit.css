@@ -1,0 +1,286 @@
+/*! tailwindcss-social v1.0.0 | MIT License | github.com/aldi/tailwindcss-social */
+
+.tw-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  border: 1px solid var(--tw-social-btn-border, transparent);
+  background-color: var(--tw-social-btn-bg, var(--tw-social-color, hsl(0, 0%, 0%)));
+  color: var(--tw-social-btn-fg, var(--tw-social-on-color, #fff));
+  cursor: pointer;
+  transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+  user-select: none;
+  webkit-user-select: none;
+  --tw-social-btn-ring: var(--tw-social-btn-ring, var(--tw-social-color, hsl(0, 0%, 0%)));
+}
+
+.tw-social-btn:hover {
+  background-color: var(--tw-social-btn-bg-hover, var(--tw-social-btn-bg, var(--tw-social-color, hsl(0, 0%, 0%))));
+  color: var(--tw-social-btn-fg-hover, var(--tw-social-btn-fg, var(--tw-social-on-color, #fff)));
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.tw-social-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--tw-social-btn-ring) 35%, transparent);
+}
+
+.tw-social-btn:active {
+  background-color: var(--tw-social-btn-bg-active, var(--tw-social-btn-bg, var(--tw-social-color, hsl(0, 0%, 0%))));
+  color: var(--tw-social-btn-fg-active, var(--tw-social-btn-fg, var(--tw-social-on-color, #fff)));
+  transform: translateY(0);
+}
+
+.tw-social-btn:disabled, .tw-social-btn.is-disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none;
+}
+
+.tw-social-btn.tw-social-size-sm {
+  padding: 0.375rem 0.625rem;
+  gap: 0.3125rem;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+}
+
+.tw-social-btn.tw-social-size-md {
+  padding: 0.5rem 0.75rem;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.tw-social-btn.tw-social-size-lg {
+  padding: 0.625rem 0.875rem;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.3125rem;
+}
+
+.tw-social-btn.tw-social-icon-only {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+}
+
+.tw-social-btn.tw-social-icon-only.tw-social-size-sm {
+  width: 2rem;
+  height: 2rem;
+}
+
+.tw-social-btn.tw-social-icon-only.tw-social-size-md {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.tw-social-btn.tw-social-icon-only.tw-social-size-lg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.tw-social-btn svg, .tw-social-btn [class*="icon"], .tw-social-btn i[class^="fa-"], .tw-social-btn i[class*=" fa-"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.tw-social-btn.tw-social-size-sm svg, .tw-social-btn.tw-social-size-sm [class*="icon"], .tw-social-btn.tw-social-size-sm i[class^="fa-"], .tw-social-btn.tw-social-size-sm i[class*=" fa-"] {
+  width: 1rem;
+  height: 1rem;
+  font-size: 1rem;
+}
+
+.tw-social-btn.tw-social-size-md svg, .tw-social-btn.tw-social-size-md [class*="icon"], .tw-social-btn.tw-social-size-md i[class^="fa-"], .tw-social-btn.tw-social-size-md i[class*=" fa-"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 1.25rem;
+}
+
+.tw-social-btn.tw-social-size-lg svg, .tw-social-btn.tw-social-size-lg [class*="icon"], .tw-social-btn.tw-social-size-lg i[class^="fa-"], .tw-social-btn.tw-social-size-lg i[class*=" fa-"] {
+  width: 1.375rem;
+  height: 1.375rem;
+  font-size: 1.375rem;
+}
+
+.tw-social-btn.tw-social-icon-left svg, .tw-social-btn.tw-social-icon-left [class*="icon"], .tw-social-btn.tw-social-icon-left i[class^="fa-"], .tw-social-btn.tw-social-icon-left i[class*=" fa-"] {
+  margin-inline-start: -0.125rem;
+}
+
+.tw-social-btn.tw-social-icon-right svg, .tw-social-btn.tw-social-icon-right [class*="icon"], .tw-social-btn.tw-social-icon-right i[class^="fa-"], .tw-social-btn.tw-social-icon-right i[class*=" fa-"] {
+  margin-inline-end: -0.125rem;
+}
+
+.tw-social-btn [data-icon="inline-start"] {
+  margin-inline-start: -0.125rem;
+}
+
+.tw-social-btn [data-icon="inline-end"] {
+  margin-inline-end: -0.125rem;
+}
+
+.tw-social-btn.tw-social-variant-light {
+  --tw-social-btn-bg: var(--tw-social-color-light);
+  --tw-social-btn-bg-hover: var(--tw-social-color-light-hover);
+  --tw-social-btn-bg-active: var(--tw-social-color-light-active);
+  --tw-social-btn-fg: var(--tw-social-color-dark);
+  --tw-social-btn-fg-hover: var(--tw-social-color-dark);
+  --tw-social-btn-fg-active: var(--tw-social-color-dark);
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: var(--tw-social-color);
+}
+
+.tw-social-btn.tw-social-variant-dark {
+  --tw-social-btn-bg: var(--tw-social-color-dark);
+  --tw-social-btn-bg-hover: var(--tw-social-color-dark-hover);
+  --tw-social-btn-bg-active: var(--tw-social-color-dark-active);
+  --tw-social-btn-fg: var(--tw-social-on-color-dark);
+  --tw-social-btn-fg-hover: var(--tw-social-on-color-dark);
+  --tw-social-btn-fg-active: var(--tw-social-on-color-dark);
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: var(--tw-social-color);
+}
+
+.tw-social-btn.tw-social-variant-outline {
+  --tw-social-btn-bg: transparent;
+  --tw-social-btn-bg-hover: var(--tw-social-color);
+  --tw-social-btn-bg-active: var(--tw-social-color-outline-active);
+  --tw-social-btn-fg: var(--tw-social-color);
+  --tw-social-btn-fg-hover: var(--tw-social-on-color);
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: var(--tw-social-color);
+  --tw-social-btn-ring: var(--tw-social-color);
+}
+
+.tw-social-btn.tw-social-variant-inverted {
+  --tw-social-btn-bg: var(--tw-social-inverted-bg);
+  --tw-social-btn-bg-hover: var(--tw-social-inverted-bg-hover);
+  --tw-social-btn-bg-active: var(--tw-social-inverted-bg-active);
+  --tw-social-btn-fg: var(--tw-social-color);
+  --tw-social-btn-fg-hover: var(--tw-social-color);
+  --tw-social-btn-fg-active: var(--tw-social-color);
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: var(--tw-social-color);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tw-social-btn {
+    transition: none;
+  }
+
+  .tw-social-btn:hover {
+    transform: none;
+  }
+}
+
+.tw-social-provider-reddit {
+  --tw-social-color: hsl(16.2, 100%, 50%);
+  --tw-social-color-light: hsl(16.2, 100%, 96%);
+  --tw-social-color-dark: hsl(16.2, 100%, 44%);
+  --tw-social-color-hover: hsl(16.2, 100%, 45%);
+  --tw-social-color-active: hsl(16.2, 100%, 40%);
+  --tw-social-color-light-hover: hsl(16.2, 100%, 93.5%);
+  --tw-social-color-light-active: hsl(16.2, 100%, 91%);
+  --tw-social-color-dark-hover: hsl(16.2, 100%, 39%);
+  --tw-social-color-dark-active: hsl(16.2, 100%, 34%);
+  --tw-social-color-outline-active: hsl(16.2, 100%, 34%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(16.2, 100%, 50%);
+  --tw-social-btn-bg-hover: hsl(16.2, 100%, 45%);
+  --tw-social-btn-bg-active: hsl(16.2, 100%, 40%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(16.2, 100%, 50%);
+}
+
+.tw-social-bg-reddit {
+  background-color: hsl(16.2, 100%, 50%);
+}
+
+.tw-social-bg-reddit-light {
+  background-color: hsl(16.2, 100%, 96%);
+}
+
+.tw-social-bg-reddit-dark {
+  background-color: hsl(16.2, 100%, 44%);
+}
+
+.tw-social-text-reddit {
+  color: hsl(16.2, 100%, 50%);
+}
+
+.tw-social-text-reddit-light {
+  color: hsl(16.2, 100%, 96%);
+}
+
+.tw-social-text-reddit-dark {
+  color: hsl(16.2, 100%, 44%);
+}
+
+.tw-social-border-reddit {
+  border-color: hsl(16.2, 100%, 50%);
+}
+
+.tw-social-border-reddit-light {
+  border-color: hsl(16.2, 100%, 96%);
+}
+
+.tw-social-border-reddit-dark {
+  border-color: hsl(16.2, 100%, 44%);
+}
+
+.tw-social-ring-reddit {
+  --tw-ring-color: hsl(16.2, 100%, 50%);
+}
+
+.tw-social-ring-reddit-light {
+  --tw-ring-color: hsl(16.2, 100%, 96%);
+}
+
+.tw-social-ring-reddit-dark {
+  --tw-ring-color: hsl(16.2, 100%, 44%);
+}
+
+.tw-social-fill-reddit {
+  fill: hsl(16.2, 100%, 50%);
+}
+
+.tw-social-fill-reddit-light {
+  fill: hsl(16.2, 100%, 96%);
+}
+
+.tw-social-fill-reddit-dark {
+  fill: hsl(16.2, 100%, 44%);
+}
+
+.tw-social-stroke-reddit {
+  stroke: hsl(16.2, 100%, 50%);
+}
+
+.tw-social-stroke-reddit-light {
+  stroke: hsl(16.2, 100%, 96%);
+}
+
+.tw-social-stroke-reddit-dark {
+  stroke: hsl(16.2, 100%, 44%);
+}

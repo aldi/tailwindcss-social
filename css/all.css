@@ -1,0 +1,2638 @@
+/*! tailwindcss-social v1.0.0 | MIT License | github.com/aldi/tailwindcss-social */
+
+.tw-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  border: 1px solid var(--tw-social-btn-border, transparent);
+  background-color: var(--tw-social-btn-bg, var(--tw-social-color, hsl(0, 0%, 0%)));
+  color: var(--tw-social-btn-fg, var(--tw-social-on-color, #fff));
+  cursor: pointer;
+  transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+  user-select: none;
+  webkit-user-select: none;
+  --tw-social-btn-ring: var(--tw-social-btn-ring, var(--tw-social-color, hsl(0, 0%, 0%)));
+}
+
+.tw-social-btn:hover {
+  background-color: var(--tw-social-btn-bg-hover, var(--tw-social-btn-bg, var(--tw-social-color, hsl(0, 0%, 0%))));
+  color: var(--tw-social-btn-fg-hover, var(--tw-social-btn-fg, var(--tw-social-on-color, #fff)));
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.tw-social-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--tw-social-btn-ring) 35%, transparent);
+}
+
+.tw-social-btn:active {
+  background-color: var(--tw-social-btn-bg-active, var(--tw-social-btn-bg, var(--tw-social-color, hsl(0, 0%, 0%))));
+  color: var(--tw-social-btn-fg-active, var(--tw-social-btn-fg, var(--tw-social-on-color, #fff)));
+  transform: translateY(0);
+}
+
+.tw-social-btn:disabled, .tw-social-btn.is-disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none;
+}
+
+.tw-social-btn.tw-social-size-sm {
+  padding: 0.375rem 0.625rem;
+  gap: 0.3125rem;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+}
+
+.tw-social-btn.tw-social-size-md {
+  padding: 0.5rem 0.75rem;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.tw-social-btn.tw-social-size-lg {
+  padding: 0.625rem 0.875rem;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.3125rem;
+}
+
+.tw-social-btn.tw-social-icon-only {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+}
+
+.tw-social-btn.tw-social-icon-only.tw-social-size-sm {
+  width: 2rem;
+  height: 2rem;
+}
+
+.tw-social-btn.tw-social-icon-only.tw-social-size-md {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.tw-social-btn.tw-social-icon-only.tw-social-size-lg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.tw-social-btn svg, .tw-social-btn [class*="icon"], .tw-social-btn i[class^="fa-"], .tw-social-btn i[class*=" fa-"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.tw-social-btn.tw-social-size-sm svg, .tw-social-btn.tw-social-size-sm [class*="icon"], .tw-social-btn.tw-social-size-sm i[class^="fa-"], .tw-social-btn.tw-social-size-sm i[class*=" fa-"] {
+  width: 1rem;
+  height: 1rem;
+  font-size: 1rem;
+}
+
+.tw-social-btn.tw-social-size-md svg, .tw-social-btn.tw-social-size-md [class*="icon"], .tw-social-btn.tw-social-size-md i[class^="fa-"], .tw-social-btn.tw-social-size-md i[class*=" fa-"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 1.25rem;
+}
+
+.tw-social-btn.tw-social-size-lg svg, .tw-social-btn.tw-social-size-lg [class*="icon"], .tw-social-btn.tw-social-size-lg i[class^="fa-"], .tw-social-btn.tw-social-size-lg i[class*=" fa-"] {
+  width: 1.375rem;
+  height: 1.375rem;
+  font-size: 1.375rem;
+}
+
+.tw-social-btn.tw-social-icon-left svg, .tw-social-btn.tw-social-icon-left [class*="icon"], .tw-social-btn.tw-social-icon-left i[class^="fa-"], .tw-social-btn.tw-social-icon-left i[class*=" fa-"] {
+  margin-inline-start: -0.125rem;
+}
+
+.tw-social-btn.tw-social-icon-right svg, .tw-social-btn.tw-social-icon-right [class*="icon"], .tw-social-btn.tw-social-icon-right i[class^="fa-"], .tw-social-btn.tw-social-icon-right i[class*=" fa-"] {
+  margin-inline-end: -0.125rem;
+}
+
+.tw-social-btn [data-icon="inline-start"] {
+  margin-inline-start: -0.125rem;
+}
+
+.tw-social-btn [data-icon="inline-end"] {
+  margin-inline-end: -0.125rem;
+}
+
+.tw-social-btn.tw-social-variant-light {
+  --tw-social-btn-bg: var(--tw-social-color-light);
+  --tw-social-btn-bg-hover: var(--tw-social-color-light-hover);
+  --tw-social-btn-bg-active: var(--tw-social-color-light-active);
+  --tw-social-btn-fg: var(--tw-social-color-dark);
+  --tw-social-btn-fg-hover: var(--tw-social-color-dark);
+  --tw-social-btn-fg-active: var(--tw-social-color-dark);
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: var(--tw-social-color);
+}
+
+.tw-social-btn.tw-social-variant-dark {
+  --tw-social-btn-bg: var(--tw-social-color-dark);
+  --tw-social-btn-bg-hover: var(--tw-social-color-dark-hover);
+  --tw-social-btn-bg-active: var(--tw-social-color-dark-active);
+  --tw-social-btn-fg: var(--tw-social-on-color-dark);
+  --tw-social-btn-fg-hover: var(--tw-social-on-color-dark);
+  --tw-social-btn-fg-active: var(--tw-social-on-color-dark);
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: var(--tw-social-color);
+}
+
+.tw-social-btn.tw-social-variant-outline {
+  --tw-social-btn-bg: transparent;
+  --tw-social-btn-bg-hover: var(--tw-social-color);
+  --tw-social-btn-bg-active: var(--tw-social-color-outline-active);
+  --tw-social-btn-fg: var(--tw-social-color);
+  --tw-social-btn-fg-hover: var(--tw-social-on-color);
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: var(--tw-social-color);
+  --tw-social-btn-ring: var(--tw-social-color);
+}
+
+.tw-social-btn.tw-social-variant-inverted {
+  --tw-social-btn-bg: var(--tw-social-inverted-bg);
+  --tw-social-btn-bg-hover: var(--tw-social-inverted-bg-hover);
+  --tw-social-btn-bg-active: var(--tw-social-inverted-bg-active);
+  --tw-social-btn-fg: var(--tw-social-color);
+  --tw-social-btn-fg-hover: var(--tw-social-color);
+  --tw-social-btn-fg-active: var(--tw-social-color);
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: var(--tw-social-color);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tw-social-btn {
+    transition: none;
+  }
+
+  .tw-social-btn:hover {
+    transform: none;
+  }
+}
+
+.tw-social-provider-apple {
+  --tw-social-color: hsl(0, 0%, 0%);
+  --tw-social-color-light: hsl(0, 0%, 96%);
+  --tw-social-color-dark: hsl(0, 0%, 0%);
+  --tw-social-color-hover: hsl(0, 0%, 0%);
+  --tw-social-color-active: hsl(0, 0%, 0%);
+  --tw-social-color-light-hover: hsl(0, 0%, 93.5%);
+  --tw-social-color-light-active: hsl(0, 0%, 91%);
+  --tw-social-color-dark-hover: hsl(0, 0%, 0%);
+  --tw-social-color-dark-active: hsl(0, 0%, 0%);
+  --tw-social-color-outline-active: hsl(0, 0%, 0%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(0, 0%, 0%);
+  --tw-social-btn-bg-hover: hsl(0, 0%, 0%);
+  --tw-social-btn-bg-active: hsl(0, 0%, 0%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(0, 0%, 0%);
+}
+
+.tw-social-bg-apple {
+  background-color: hsl(0, 0%, 0%);
+}
+
+.tw-social-bg-apple-light {
+  background-color: hsl(0, 0%, 96%);
+}
+
+.tw-social-bg-apple-dark {
+  background-color: hsl(0, 0%, 0%);
+}
+
+.tw-social-text-apple {
+  color: hsl(0, 0%, 0%);
+}
+
+.tw-social-text-apple-light {
+  color: hsl(0, 0%, 96%);
+}
+
+.tw-social-text-apple-dark {
+  color: hsl(0, 0%, 0%);
+}
+
+.tw-social-border-apple {
+  border-color: hsl(0, 0%, 0%);
+}
+
+.tw-social-border-apple-light {
+  border-color: hsl(0, 0%, 96%);
+}
+
+.tw-social-border-apple-dark {
+  border-color: hsl(0, 0%, 0%);
+}
+
+.tw-social-ring-apple {
+  --tw-ring-color: hsl(0, 0%, 0%);
+}
+
+.tw-social-ring-apple-light {
+  --tw-ring-color: hsl(0, 0%, 96%);
+}
+
+.tw-social-ring-apple-dark {
+  --tw-ring-color: hsl(0, 0%, 0%);
+}
+
+.tw-social-fill-apple {
+  fill: hsl(0, 0%, 0%);
+}
+
+.tw-social-fill-apple-light {
+  fill: hsl(0, 0%, 96%);
+}
+
+.tw-social-fill-apple-dark {
+  fill: hsl(0, 0%, 0%);
+}
+
+.tw-social-stroke-apple {
+  stroke: hsl(0, 0%, 0%);
+}
+
+.tw-social-stroke-apple-light {
+  stroke: hsl(0, 0%, 96%);
+}
+
+.tw-social-stroke-apple-dark {
+  stroke: hsl(0, 0%, 0%);
+}
+
+.tw-social-provider-bitbucket {
+  --tw-social-color: hsl(210, 60%, 31%);
+  --tw-social-color-light: hsl(210, 60%, 96%);
+  --tw-social-color-dark: hsl(210, 60%, 31%);
+  --tw-social-color-hover: hsl(210, 60%, 26%);
+  --tw-social-color-active: hsl(210, 60%, 21%);
+  --tw-social-color-light-hover: hsl(210, 60%, 93.5%);
+  --tw-social-color-light-active: hsl(210, 60%, 91%);
+  --tw-social-color-dark-hover: hsl(210, 60%, 26%);
+  --tw-social-color-dark-active: hsl(210, 60%, 21%);
+  --tw-social-color-outline-active: hsl(210, 60%, 15%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(210, 60%, 31%);
+  --tw-social-btn-bg-hover: hsl(210, 60%, 26%);
+  --tw-social-btn-bg-active: hsl(210, 60%, 21%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(210, 60%, 31%);
+}
+
+.tw-social-bg-bitbucket {
+  background-color: hsl(210, 60%, 31%);
+}
+
+.tw-social-bg-bitbucket-light {
+  background-color: hsl(210, 60%, 96%);
+}
+
+.tw-social-bg-bitbucket-dark {
+  background-color: hsl(210, 60%, 31%);
+}
+
+.tw-social-text-bitbucket {
+  color: hsl(210, 60%, 31%);
+}
+
+.tw-social-text-bitbucket-light {
+  color: hsl(210, 60%, 96%);
+}
+
+.tw-social-text-bitbucket-dark {
+  color: hsl(210, 60%, 31%);
+}
+
+.tw-social-border-bitbucket {
+  border-color: hsl(210, 60%, 31%);
+}
+
+.tw-social-border-bitbucket-light {
+  border-color: hsl(210, 60%, 96%);
+}
+
+.tw-social-border-bitbucket-dark {
+  border-color: hsl(210, 60%, 31%);
+}
+
+.tw-social-ring-bitbucket {
+  --tw-ring-color: hsl(210, 60%, 31%);
+}
+
+.tw-social-ring-bitbucket-light {
+  --tw-ring-color: hsl(210, 60%, 96%);
+}
+
+.tw-social-ring-bitbucket-dark {
+  --tw-ring-color: hsl(210, 60%, 31%);
+}
+
+.tw-social-fill-bitbucket {
+  fill: hsl(210, 60%, 31%);
+}
+
+.tw-social-fill-bitbucket-light {
+  fill: hsl(210, 60%, 96%);
+}
+
+.tw-social-fill-bitbucket-dark {
+  fill: hsl(210, 60%, 31%);
+}
+
+.tw-social-stroke-bitbucket {
+  stroke: hsl(210, 60%, 31%);
+}
+
+.tw-social-stroke-bitbucket-light {
+  stroke: hsl(210, 60%, 96%);
+}
+
+.tw-social-stroke-bitbucket-dark {
+  stroke: hsl(210, 60%, 31%);
+}
+
+.tw-social-provider-discord {
+  --tw-social-color: hsl(226.7, 58.4%, 65.1%);
+  --tw-social-color-light: hsl(226.7, 58.4%, 96%);
+  --tw-social-color-dark: hsl(226.7, 58.4%, 43%);
+  --tw-social-color-hover: hsl(226.7, 58.4%, 60.1%);
+  --tw-social-color-active: hsl(226.7, 58.4%, 55.1%);
+  --tw-social-color-light-hover: hsl(226.7, 58.4%, 93.5%);
+  --tw-social-color-light-active: hsl(226.7, 58.4%, 91%);
+  --tw-social-color-dark-hover: hsl(226.7, 58.4%, 38%);
+  --tw-social-color-dark-active: hsl(226.7, 58.4%, 33%);
+  --tw-social-color-outline-active: hsl(226.7, 58.4%, 49.1%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(226.7, 58.4%, 65.1%);
+  --tw-social-btn-bg-hover: hsl(226.7, 58.4%, 60.1%);
+  --tw-social-btn-bg-active: hsl(226.7, 58.4%, 55.1%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(226.7, 58.4%, 65.1%);
+}
+
+.tw-social-bg-discord {
+  background-color: hsl(226.7, 58.4%, 65.1%);
+}
+
+.tw-social-bg-discord-light {
+  background-color: hsl(226.7, 58.4%, 96%);
+}
+
+.tw-social-bg-discord-dark {
+  background-color: hsl(226.7, 58.4%, 43%);
+}
+
+.tw-social-text-discord {
+  color: hsl(226.7, 58.4%, 65.1%);
+}
+
+.tw-social-text-discord-light {
+  color: hsl(226.7, 58.4%, 96%);
+}
+
+.tw-social-text-discord-dark {
+  color: hsl(226.7, 58.4%, 43%);
+}
+
+.tw-social-border-discord {
+  border-color: hsl(226.7, 58.4%, 65.1%);
+}
+
+.tw-social-border-discord-light {
+  border-color: hsl(226.7, 58.4%, 96%);
+}
+
+.tw-social-border-discord-dark {
+  border-color: hsl(226.7, 58.4%, 43%);
+}
+
+.tw-social-ring-discord {
+  --tw-ring-color: hsl(226.7, 58.4%, 65.1%);
+}
+
+.tw-social-ring-discord-light {
+  --tw-ring-color: hsl(226.7, 58.4%, 96%);
+}
+
+.tw-social-ring-discord-dark {
+  --tw-ring-color: hsl(226.7, 58.4%, 43%);
+}
+
+.tw-social-fill-discord {
+  fill: hsl(226.7, 58.4%, 65.1%);
+}
+
+.tw-social-fill-discord-light {
+  fill: hsl(226.7, 58.4%, 96%);
+}
+
+.tw-social-fill-discord-dark {
+  fill: hsl(226.7, 58.4%, 43%);
+}
+
+.tw-social-stroke-discord {
+  stroke: hsl(226.7, 58.4%, 65.1%);
+}
+
+.tw-social-stroke-discord-light {
+  stroke: hsl(226.7, 58.4%, 96%);
+}
+
+.tw-social-stroke-discord-dark {
+  stroke: hsl(226.7, 58.4%, 43%);
+}
+
+.tw-social-provider-dropbox {
+  --tw-social-color: hsl(217.2, 100%, 50%);
+  --tw-social-color-light: hsl(217.2, 100%, 96%);
+  --tw-social-color-dark: hsl(217.2, 100%, 49%);
+  --tw-social-color-hover: hsl(217.2, 100%, 45%);
+  --tw-social-color-active: hsl(217.2, 100%, 40%);
+  --tw-social-color-light-hover: hsl(217.2, 100%, 93.5%);
+  --tw-social-color-light-active: hsl(217.2, 100%, 91%);
+  --tw-social-color-dark-hover: hsl(217.2, 100%, 44%);
+  --tw-social-color-dark-active: hsl(217.2, 100%, 39%);
+  --tw-social-color-outline-active: hsl(217.2, 100%, 34%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(217.2, 100%, 50%);
+  --tw-social-btn-bg-hover: hsl(217.2, 100%, 45%);
+  --tw-social-btn-bg-active: hsl(217.2, 100%, 40%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(217.2, 100%, 50%);
+}
+
+.tw-social-bg-dropbox {
+  background-color: hsl(217.2, 100%, 50%);
+}
+
+.tw-social-bg-dropbox-light {
+  background-color: hsl(217.2, 100%, 96%);
+}
+
+.tw-social-bg-dropbox-dark {
+  background-color: hsl(217.2, 100%, 49%);
+}
+
+.tw-social-text-dropbox {
+  color: hsl(217.2, 100%, 50%);
+}
+
+.tw-social-text-dropbox-light {
+  color: hsl(217.2, 100%, 96%);
+}
+
+.tw-social-text-dropbox-dark {
+  color: hsl(217.2, 100%, 49%);
+}
+
+.tw-social-border-dropbox {
+  border-color: hsl(217.2, 100%, 50%);
+}
+
+.tw-social-border-dropbox-light {
+  border-color: hsl(217.2, 100%, 96%);
+}
+
+.tw-social-border-dropbox-dark {
+  border-color: hsl(217.2, 100%, 49%);
+}
+
+.tw-social-ring-dropbox {
+  --tw-ring-color: hsl(217.2, 100%, 50%);
+}
+
+.tw-social-ring-dropbox-light {
+  --tw-ring-color: hsl(217.2, 100%, 96%);
+}
+
+.tw-social-ring-dropbox-dark {
+  --tw-ring-color: hsl(217.2, 100%, 49%);
+}
+
+.tw-social-fill-dropbox {
+  fill: hsl(217.2, 100%, 50%);
+}
+
+.tw-social-fill-dropbox-light {
+  fill: hsl(217.2, 100%, 96%);
+}
+
+.tw-social-fill-dropbox-dark {
+  fill: hsl(217.2, 100%, 49%);
+}
+
+.tw-social-stroke-dropbox {
+  stroke: hsl(217.2, 100%, 50%);
+}
+
+.tw-social-stroke-dropbox-light {
+  stroke: hsl(217.2, 100%, 96%);
+}
+
+.tw-social-stroke-dropbox-dark {
+  stroke: hsl(217.2, 100%, 49%);
+}
+
+.tw-social-provider-facebook {
+  --tw-social-color: hsl(213.9, 89.3%, 52.2%);
+  --tw-social-color-light: hsl(213.9, 89.3%, 96%);
+  --tw-social-color-dark: hsl(213.9, 89.3%, 47%);
+  --tw-social-color-hover: hsl(213.9, 89.3%, 47.2%);
+  --tw-social-color-active: hsl(213.9, 89.3%, 42.2%);
+  --tw-social-color-light-hover: hsl(213.9, 89.3%, 93.5%);
+  --tw-social-color-light-active: hsl(213.9, 89.3%, 91%);
+  --tw-social-color-dark-hover: hsl(213.9, 89.3%, 42%);
+  --tw-social-color-dark-active: hsl(213.9, 89.3%, 37%);
+  --tw-social-color-outline-active: hsl(213.9, 89.3%, 36.2%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(213.9, 89.3%, 52.2%);
+  --tw-social-btn-bg-hover: hsl(213.9, 89.3%, 47.2%);
+  --tw-social-btn-bg-active: hsl(213.9, 89.3%, 42.2%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(213.9, 89.3%, 52.2%);
+}
+
+.tw-social-bg-facebook {
+  background-color: hsl(213.9, 89.3%, 52.2%);
+}
+
+.tw-social-bg-facebook-light {
+  background-color: hsl(213.9, 89.3%, 96%);
+}
+
+.tw-social-bg-facebook-dark {
+  background-color: hsl(213.9, 89.3%, 47%);
+}
+
+.tw-social-text-facebook {
+  color: hsl(213.9, 89.3%, 52.2%);
+}
+
+.tw-social-text-facebook-light {
+  color: hsl(213.9, 89.3%, 96%);
+}
+
+.tw-social-text-facebook-dark {
+  color: hsl(213.9, 89.3%, 47%);
+}
+
+.tw-social-border-facebook {
+  border-color: hsl(213.9, 89.3%, 52.2%);
+}
+
+.tw-social-border-facebook-light {
+  border-color: hsl(213.9, 89.3%, 96%);
+}
+
+.tw-social-border-facebook-dark {
+  border-color: hsl(213.9, 89.3%, 47%);
+}
+
+.tw-social-ring-facebook {
+  --tw-ring-color: hsl(213.9, 89.3%, 52.2%);
+}
+
+.tw-social-ring-facebook-light {
+  --tw-ring-color: hsl(213.9, 89.3%, 96%);
+}
+
+.tw-social-ring-facebook-dark {
+  --tw-ring-color: hsl(213.9, 89.3%, 47%);
+}
+
+.tw-social-fill-facebook {
+  fill: hsl(213.9, 89.3%, 52.2%);
+}
+
+.tw-social-fill-facebook-light {
+  fill: hsl(213.9, 89.3%, 96%);
+}
+
+.tw-social-fill-facebook-dark {
+  fill: hsl(213.9, 89.3%, 47%);
+}
+
+.tw-social-stroke-facebook {
+  stroke: hsl(213.9, 89.3%, 52.2%);
+}
+
+.tw-social-stroke-facebook-light {
+  stroke: hsl(213.9, 89.3%, 96%);
+}
+
+.tw-social-stroke-facebook-dark {
+  stroke: hsl(213.9, 89.3%, 47%);
+}
+
+.tw-social-provider-flickr {
+  --tw-social-color: hsl(329, 100%, 50%);
+  --tw-social-color-light: hsl(329, 100%, 96%);
+  --tw-social-color-dark: hsl(329, 100%, 45%);
+  --tw-social-color-hover: hsl(329, 100%, 45%);
+  --tw-social-color-active: hsl(329, 100%, 40%);
+  --tw-social-color-light-hover: hsl(329, 100%, 93.5%);
+  --tw-social-color-light-active: hsl(329, 100%, 91%);
+  --tw-social-color-dark-hover: hsl(329, 100%, 40%);
+  --tw-social-color-dark-active: hsl(329, 100%, 35%);
+  --tw-social-color-outline-active: hsl(329, 100%, 34%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(329, 100%, 50%);
+  --tw-social-btn-bg-hover: hsl(329, 100%, 45%);
+  --tw-social-btn-bg-active: hsl(329, 100%, 40%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(329, 100%, 50%);
+}
+
+.tw-social-bg-flickr {
+  background-color: hsl(329, 100%, 50%);
+}
+
+.tw-social-bg-flickr-light {
+  background-color: hsl(329, 100%, 96%);
+}
+
+.tw-social-bg-flickr-dark {
+  background-color: hsl(329, 100%, 45%);
+}
+
+.tw-social-text-flickr {
+  color: hsl(329, 100%, 50%);
+}
+
+.tw-social-text-flickr-light {
+  color: hsl(329, 100%, 96%);
+}
+
+.tw-social-text-flickr-dark {
+  color: hsl(329, 100%, 45%);
+}
+
+.tw-social-border-flickr {
+  border-color: hsl(329, 100%, 50%);
+}
+
+.tw-social-border-flickr-light {
+  border-color: hsl(329, 100%, 96%);
+}
+
+.tw-social-border-flickr-dark {
+  border-color: hsl(329, 100%, 45%);
+}
+
+.tw-social-ring-flickr {
+  --tw-ring-color: hsl(329, 100%, 50%);
+}
+
+.tw-social-ring-flickr-light {
+  --tw-ring-color: hsl(329, 100%, 96%);
+}
+
+.tw-social-ring-flickr-dark {
+  --tw-ring-color: hsl(329, 100%, 45%);
+}
+
+.tw-social-fill-flickr {
+  fill: hsl(329, 100%, 50%);
+}
+
+.tw-social-fill-flickr-light {
+  fill: hsl(329, 100%, 96%);
+}
+
+.tw-social-fill-flickr-dark {
+  fill: hsl(329, 100%, 45%);
+}
+
+.tw-social-stroke-flickr {
+  stroke: hsl(329, 100%, 50%);
+}
+
+.tw-social-stroke-flickr-light {
+  stroke: hsl(329, 100%, 96%);
+}
+
+.tw-social-stroke-flickr-dark {
+  stroke: hsl(329, 100%, 45%);
+}
+
+.tw-social-provider-foursquare {
+  --tw-social-color: hsl(344.1, 93.7%, 62.9%);
+  --tw-social-color-light: hsl(344.1, 93.7%, 96%);
+  --tw-social-color-dark: hsl(344.1, 93.7%, 43%);
+  --tw-social-color-hover: hsl(344.1, 93.7%, 57.9%);
+  --tw-social-color-active: hsl(344.1, 93.7%, 52.9%);
+  --tw-social-color-light-hover: hsl(344.1, 93.7%, 93.5%);
+  --tw-social-color-light-active: hsl(344.1, 93.7%, 91%);
+  --tw-social-color-dark-hover: hsl(344.1, 93.7%, 38%);
+  --tw-social-color-dark-active: hsl(344.1, 93.7%, 33%);
+  --tw-social-color-outline-active: hsl(344.1, 93.7%, 46.9%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(344.1, 93.7%, 62.9%);
+  --tw-social-btn-bg-hover: hsl(344.1, 93.7%, 57.9%);
+  --tw-social-btn-bg-active: hsl(344.1, 93.7%, 52.9%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(344.1, 93.7%, 62.9%);
+}
+
+.tw-social-bg-foursquare {
+  background-color: hsl(344.1, 93.7%, 62.9%);
+}
+
+.tw-social-bg-foursquare-light {
+  background-color: hsl(344.1, 93.7%, 96%);
+}
+
+.tw-social-bg-foursquare-dark {
+  background-color: hsl(344.1, 93.7%, 43%);
+}
+
+.tw-social-text-foursquare {
+  color: hsl(344.1, 93.7%, 62.9%);
+}
+
+.tw-social-text-foursquare-light {
+  color: hsl(344.1, 93.7%, 96%);
+}
+
+.tw-social-text-foursquare-dark {
+  color: hsl(344.1, 93.7%, 43%);
+}
+
+.tw-social-border-foursquare {
+  border-color: hsl(344.1, 93.7%, 62.9%);
+}
+
+.tw-social-border-foursquare-light {
+  border-color: hsl(344.1, 93.7%, 96%);
+}
+
+.tw-social-border-foursquare-dark {
+  border-color: hsl(344.1, 93.7%, 43%);
+}
+
+.tw-social-ring-foursquare {
+  --tw-ring-color: hsl(344.1, 93.7%, 62.9%);
+}
+
+.tw-social-ring-foursquare-light {
+  --tw-ring-color: hsl(344.1, 93.7%, 96%);
+}
+
+.tw-social-ring-foursquare-dark {
+  --tw-ring-color: hsl(344.1, 93.7%, 43%);
+}
+
+.tw-social-fill-foursquare {
+  fill: hsl(344.1, 93.7%, 62.9%);
+}
+
+.tw-social-fill-foursquare-light {
+  fill: hsl(344.1, 93.7%, 96%);
+}
+
+.tw-social-fill-foursquare-dark {
+  fill: hsl(344.1, 93.7%, 43%);
+}
+
+.tw-social-stroke-foursquare {
+  stroke: hsl(344.1, 93.7%, 62.9%);
+}
+
+.tw-social-stroke-foursquare-light {
+  stroke: hsl(344.1, 93.7%, 96%);
+}
+
+.tw-social-stroke-foursquare-dark {
+  stroke: hsl(344.1, 93.7%, 43%);
+}
+
+.tw-social-provider-github {
+  --tw-social-color: hsl(210, 12.2%, 16.1%);
+  --tw-social-color-light: hsl(210, 12.2%, 96%);
+  --tw-social-color-dark: hsl(210, 12.2%, 16.1%);
+  --tw-social-color-hover: hsl(210, 12.2%, 11.1%);
+  --tw-social-color-active: hsl(210, 12.2%, 6.1%);
+  --tw-social-color-light-hover: hsl(210, 12.2%, 93.5%);
+  --tw-social-color-light-active: hsl(210, 12.2%, 91%);
+  --tw-social-color-dark-hover: hsl(210, 12.2%, 11.1%);
+  --tw-social-color-dark-active: hsl(210, 12.2%, 6.1%);
+  --tw-social-color-outline-active: hsl(210, 12.2%, 0.1%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(210, 12.2%, 16.1%);
+  --tw-social-btn-bg-hover: hsl(210, 12.2%, 11.1%);
+  --tw-social-btn-bg-active: hsl(210, 12.2%, 6.1%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(210, 12.2%, 16.1%);
+}
+
+.tw-social-bg-github {
+  background-color: hsl(210, 12.2%, 16.1%);
+}
+
+.tw-social-bg-github-light {
+  background-color: hsl(210, 12.2%, 96%);
+}
+
+.tw-social-bg-github-dark {
+  background-color: hsl(210, 12.2%, 16.1%);
+}
+
+.tw-social-text-github {
+  color: hsl(210, 12.2%, 16.1%);
+}
+
+.tw-social-text-github-light {
+  color: hsl(210, 12.2%, 96%);
+}
+
+.tw-social-text-github-dark {
+  color: hsl(210, 12.2%, 16.1%);
+}
+
+.tw-social-border-github {
+  border-color: hsl(210, 12.2%, 16.1%);
+}
+
+.tw-social-border-github-light {
+  border-color: hsl(210, 12.2%, 96%);
+}
+
+.tw-social-border-github-dark {
+  border-color: hsl(210, 12.2%, 16.1%);
+}
+
+.tw-social-ring-github {
+  --tw-ring-color: hsl(210, 12.2%, 16.1%);
+}
+
+.tw-social-ring-github-light {
+  --tw-ring-color: hsl(210, 12.2%, 96%);
+}
+
+.tw-social-ring-github-dark {
+  --tw-ring-color: hsl(210, 12.2%, 16.1%);
+}
+
+.tw-social-fill-github {
+  fill: hsl(210, 12.2%, 16.1%);
+}
+
+.tw-social-fill-github-light {
+  fill: hsl(210, 12.2%, 96%);
+}
+
+.tw-social-fill-github-dark {
+  fill: hsl(210, 12.2%, 16.1%);
+}
+
+.tw-social-stroke-github {
+  stroke: hsl(210, 12.2%, 16.1%);
+}
+
+.tw-social-stroke-github-light {
+  stroke: hsl(210, 12.2%, 96%);
+}
+
+.tw-social-stroke-github-dark {
+  stroke: hsl(210, 12.2%, 16.1%);
+}
+
+.tw-social-provider-gitlab {
+  --tw-social-color: hsl(13.6, 79.2%, 52.9%);
+  --tw-social-color-light: hsl(13.6, 79.2%, 96%);
+  --tw-social-color-dark: hsl(13.6, 79.2%, 45%);
+  --tw-social-color-hover: hsl(13.6, 79.2%, 47.9%);
+  --tw-social-color-active: hsl(13.6, 79.2%, 42.9%);
+  --tw-social-color-light-hover: hsl(13.6, 79.2%, 93.5%);
+  --tw-social-color-light-active: hsl(13.6, 79.2%, 91%);
+  --tw-social-color-dark-hover: hsl(13.6, 79.2%, 40%);
+  --tw-social-color-dark-active: hsl(13.6, 79.2%, 35%);
+  --tw-social-color-outline-active: hsl(13.6, 79.2%, 36.9%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(13.6, 79.2%, 52.9%);
+  --tw-social-btn-bg-hover: hsl(13.6, 79.2%, 47.9%);
+  --tw-social-btn-bg-active: hsl(13.6, 79.2%, 42.9%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(13.6, 79.2%, 52.9%);
+}
+
+.tw-social-bg-gitlab {
+  background-color: hsl(13.6, 79.2%, 52.9%);
+}
+
+.tw-social-bg-gitlab-light {
+  background-color: hsl(13.6, 79.2%, 96%);
+}
+
+.tw-social-bg-gitlab-dark {
+  background-color: hsl(13.6, 79.2%, 45%);
+}
+
+.tw-social-text-gitlab {
+  color: hsl(13.6, 79.2%, 52.9%);
+}
+
+.tw-social-text-gitlab-light {
+  color: hsl(13.6, 79.2%, 96%);
+}
+
+.tw-social-text-gitlab-dark {
+  color: hsl(13.6, 79.2%, 45%);
+}
+
+.tw-social-border-gitlab {
+  border-color: hsl(13.6, 79.2%, 52.9%);
+}
+
+.tw-social-border-gitlab-light {
+  border-color: hsl(13.6, 79.2%, 96%);
+}
+
+.tw-social-border-gitlab-dark {
+  border-color: hsl(13.6, 79.2%, 45%);
+}
+
+.tw-social-ring-gitlab {
+  --tw-ring-color: hsl(13.6, 79.2%, 52.9%);
+}
+
+.tw-social-ring-gitlab-light {
+  --tw-ring-color: hsl(13.6, 79.2%, 96%);
+}
+
+.tw-social-ring-gitlab-dark {
+  --tw-ring-color: hsl(13.6, 79.2%, 45%);
+}
+
+.tw-social-fill-gitlab {
+  fill: hsl(13.6, 79.2%, 52.9%);
+}
+
+.tw-social-fill-gitlab-light {
+  fill: hsl(13.6, 79.2%, 96%);
+}
+
+.tw-social-fill-gitlab-dark {
+  fill: hsl(13.6, 79.2%, 45%);
+}
+
+.tw-social-stroke-gitlab {
+  stroke: hsl(13.6, 79.2%, 52.9%);
+}
+
+.tw-social-stroke-gitlab-light {
+  stroke: hsl(13.6, 79.2%, 96%);
+}
+
+.tw-social-stroke-gitlab-dark {
+  stroke: hsl(13.6, 79.2%, 45%);
+}
+
+.tw-social-provider-instagram {
+  --tw-social-color: hsl(353.8, 82.1%, 62.7%);
+  --tw-social-color-light: hsl(353.8, 82.1%, 96%);
+  --tw-social-color-dark: hsl(353.8, 82.1%, 44%);
+  --tw-social-color-hover: hsl(353.8, 82.1%, 57.7%);
+  --tw-social-color-active: hsl(353.8, 82.1%, 52.7%);
+  --tw-social-color-light-hover: hsl(353.8, 82.1%, 93.5%);
+  --tw-social-color-light-active: hsl(353.8, 82.1%, 91%);
+  --tw-social-color-dark-hover: hsl(353.8, 82.1%, 39%);
+  --tw-social-color-dark-active: hsl(353.8, 82.1%, 34%);
+  --tw-social-color-outline-active: hsl(353.8, 82.1%, 46.7%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(353.8, 82.1%, 62.7%);
+  --tw-social-btn-bg-hover: hsl(353.8, 82.1%, 57.7%);
+  --tw-social-btn-bg-active: hsl(353.8, 82.1%, 52.7%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(353.8, 82.1%, 62.7%);
+}
+
+.tw-social-bg-instagram {
+  background-color: hsl(353.8, 82.1%, 62.7%);
+}
+
+.tw-social-bg-instagram-light {
+  background-color: hsl(353.8, 82.1%, 96%);
+}
+
+.tw-social-bg-instagram-dark {
+  background-color: hsl(353.8, 82.1%, 44%);
+}
+
+.tw-social-text-instagram {
+  color: hsl(353.8, 82.1%, 62.7%);
+}
+
+.tw-social-text-instagram-light {
+  color: hsl(353.8, 82.1%, 96%);
+}
+
+.tw-social-text-instagram-dark {
+  color: hsl(353.8, 82.1%, 44%);
+}
+
+.tw-social-border-instagram {
+  border-color: hsl(353.8, 82.1%, 62.7%);
+}
+
+.tw-social-border-instagram-light {
+  border-color: hsl(353.8, 82.1%, 96%);
+}
+
+.tw-social-border-instagram-dark {
+  border-color: hsl(353.8, 82.1%, 44%);
+}
+
+.tw-social-ring-instagram {
+  --tw-ring-color: hsl(353.8, 82.1%, 62.7%);
+}
+
+.tw-social-ring-instagram-light {
+  --tw-ring-color: hsl(353.8, 82.1%, 96%);
+}
+
+.tw-social-ring-instagram-dark {
+  --tw-ring-color: hsl(353.8, 82.1%, 44%);
+}
+
+.tw-social-fill-instagram {
+  fill: hsl(353.8, 82.1%, 62.7%);
+}
+
+.tw-social-fill-instagram-light {
+  fill: hsl(353.8, 82.1%, 96%);
+}
+
+.tw-social-fill-instagram-dark {
+  fill: hsl(353.8, 82.1%, 44%);
+}
+
+.tw-social-stroke-instagram {
+  stroke: hsl(353.8, 82.1%, 62.7%);
+}
+
+.tw-social-stroke-instagram-light {
+  stroke: hsl(353.8, 82.1%, 96%);
+}
+
+.tw-social-stroke-instagram-dark {
+  stroke: hsl(353.8, 82.1%, 44%);
+}
+
+.tw-social-provider-linkedin {
+  --tw-social-color: hsl(210, 90.2%, 40%);
+  --tw-social-color-light: hsl(210, 90.2%, 96%);
+  --tw-social-color-dark: hsl(210, 90.2%, 40%);
+  --tw-social-color-hover: hsl(210, 90.2%, 35%);
+  --tw-social-color-active: hsl(210, 90.2%, 30%);
+  --tw-social-color-light-hover: hsl(210, 90.2%, 93.5%);
+  --tw-social-color-light-active: hsl(210, 90.2%, 91%);
+  --tw-social-color-dark-hover: hsl(210, 90.2%, 35%);
+  --tw-social-color-dark-active: hsl(210, 90.2%, 30%);
+  --tw-social-color-outline-active: hsl(210, 90.2%, 24%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(210, 90.2%, 40%);
+  --tw-social-btn-bg-hover: hsl(210, 90.2%, 35%);
+  --tw-social-btn-bg-active: hsl(210, 90.2%, 30%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(210, 90.2%, 40%);
+}
+
+.tw-social-bg-linkedin {
+  background-color: hsl(210, 90.2%, 40%);
+}
+
+.tw-social-bg-linkedin-light {
+  background-color: hsl(210, 90.2%, 96%);
+}
+
+.tw-social-bg-linkedin-dark {
+  background-color: hsl(210, 90.2%, 40%);
+}
+
+.tw-social-text-linkedin {
+  color: hsl(210, 90.2%, 40%);
+}
+
+.tw-social-text-linkedin-light {
+  color: hsl(210, 90.2%, 96%);
+}
+
+.tw-social-text-linkedin-dark {
+  color: hsl(210, 90.2%, 40%);
+}
+
+.tw-social-border-linkedin {
+  border-color: hsl(210, 90.2%, 40%);
+}
+
+.tw-social-border-linkedin-light {
+  border-color: hsl(210, 90.2%, 96%);
+}
+
+.tw-social-border-linkedin-dark {
+  border-color: hsl(210, 90.2%, 40%);
+}
+
+.tw-social-ring-linkedin {
+  --tw-ring-color: hsl(210, 90.2%, 40%);
+}
+
+.tw-social-ring-linkedin-light {
+  --tw-ring-color: hsl(210, 90.2%, 96%);
+}
+
+.tw-social-ring-linkedin-dark {
+  --tw-ring-color: hsl(210, 90.2%, 40%);
+}
+
+.tw-social-fill-linkedin {
+  fill: hsl(210, 90.2%, 40%);
+}
+
+.tw-social-fill-linkedin-light {
+  fill: hsl(210, 90.2%, 96%);
+}
+
+.tw-social-fill-linkedin-dark {
+  fill: hsl(210, 90.2%, 40%);
+}
+
+.tw-social-stroke-linkedin {
+  stroke: hsl(210, 90.2%, 40%);
+}
+
+.tw-social-stroke-linkedin-light {
+  stroke: hsl(210, 90.2%, 96%);
+}
+
+.tw-social-stroke-linkedin-dark {
+  stroke: hsl(210, 90.2%, 40%);
+}
+
+.tw-social-provider-microsoft {
+  --tw-social-color: hsl(206.4, 100%, 36.1%);
+  --tw-social-color-light: hsl(206.4, 100%, 96%);
+  --tw-social-color-dark: hsl(206.4, 100%, 36.1%);
+  --tw-social-color-hover: hsl(206.4, 100%, 31.1%);
+  --tw-social-color-active: hsl(206.4, 100%, 26.1%);
+  --tw-social-color-light-hover: hsl(206.4, 100%, 93.5%);
+  --tw-social-color-light-active: hsl(206.4, 100%, 91%);
+  --tw-social-color-dark-hover: hsl(206.4, 100%, 31.1%);
+  --tw-social-color-dark-active: hsl(206.4, 100%, 26.1%);
+  --tw-social-color-outline-active: hsl(206.4, 100%, 20.1%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(206.4, 100%, 36.1%);
+  --tw-social-btn-bg-hover: hsl(206.4, 100%, 31.1%);
+  --tw-social-btn-bg-active: hsl(206.4, 100%, 26.1%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(206.4, 100%, 36.1%);
+}
+
+.tw-social-bg-microsoft {
+  background-color: hsl(206.4, 100%, 36.1%);
+}
+
+.tw-social-bg-microsoft-light {
+  background-color: hsl(206.4, 100%, 96%);
+}
+
+.tw-social-bg-microsoft-dark {
+  background-color: hsl(206.4, 100%, 36.1%);
+}
+
+.tw-social-text-microsoft {
+  color: hsl(206.4, 100%, 36.1%);
+}
+
+.tw-social-text-microsoft-light {
+  color: hsl(206.4, 100%, 96%);
+}
+
+.tw-social-text-microsoft-dark {
+  color: hsl(206.4, 100%, 36.1%);
+}
+
+.tw-social-border-microsoft {
+  border-color: hsl(206.4, 100%, 36.1%);
+}
+
+.tw-social-border-microsoft-light {
+  border-color: hsl(206.4, 100%, 96%);
+}
+
+.tw-social-border-microsoft-dark {
+  border-color: hsl(206.4, 100%, 36.1%);
+}
+
+.tw-social-ring-microsoft {
+  --tw-ring-color: hsl(206.4, 100%, 36.1%);
+}
+
+.tw-social-ring-microsoft-light {
+  --tw-ring-color: hsl(206.4, 100%, 96%);
+}
+
+.tw-social-ring-microsoft-dark {
+  --tw-ring-color: hsl(206.4, 100%, 36.1%);
+}
+
+.tw-social-fill-microsoft {
+  fill: hsl(206.4, 100%, 36.1%);
+}
+
+.tw-social-fill-microsoft-light {
+  fill: hsl(206.4, 100%, 96%);
+}
+
+.tw-social-fill-microsoft-dark {
+  fill: hsl(206.4, 100%, 36.1%);
+}
+
+.tw-social-stroke-microsoft {
+  stroke: hsl(206.4, 100%, 36.1%);
+}
+
+.tw-social-stroke-microsoft-light {
+  stroke: hsl(206.4, 100%, 96%);
+}
+
+.tw-social-stroke-microsoft-dark {
+  stroke: hsl(206.4, 100%, 36.1%);
+}
+
+.tw-social-provider-odnoklassniki {
+  --tw-social-color: hsl(31, 93%, 48%);
+  --tw-social-color-light: hsl(31, 93%, 96%);
+  --tw-social-color-dark: hsl(31, 93%, 40%);
+  --tw-social-color-hover: hsl(31, 93%, 43%);
+  --tw-social-color-active: hsl(31, 93%, 38%);
+  --tw-social-color-light-hover: hsl(31, 93%, 93.5%);
+  --tw-social-color-light-active: hsl(31, 93%, 91%);
+  --tw-social-color-dark-hover: hsl(31, 93%, 35%);
+  --tw-social-color-dark-active: hsl(31, 93%, 30%);
+  --tw-social-color-outline-active: hsl(31, 93%, 32%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(31, 93%, 48%);
+  --tw-social-btn-bg-hover: hsl(31, 93%, 43%);
+  --tw-social-btn-bg-active: hsl(31, 93%, 38%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(31, 93%, 48%);
+}
+
+.tw-social-bg-odnoklassniki {
+  background-color: hsl(31, 93%, 48%);
+}
+
+.tw-social-bg-odnoklassniki-light {
+  background-color: hsl(31, 93%, 96%);
+}
+
+.tw-social-bg-odnoklassniki-dark {
+  background-color: hsl(31, 93%, 40%);
+}
+
+.tw-social-text-odnoklassniki {
+  color: hsl(31, 93%, 48%);
+}
+
+.tw-social-text-odnoklassniki-light {
+  color: hsl(31, 93%, 96%);
+}
+
+.tw-social-text-odnoklassniki-dark {
+  color: hsl(31, 93%, 40%);
+}
+
+.tw-social-border-odnoklassniki {
+  border-color: hsl(31, 93%, 48%);
+}
+
+.tw-social-border-odnoklassniki-light {
+  border-color: hsl(31, 93%, 96%);
+}
+
+.tw-social-border-odnoklassniki-dark {
+  border-color: hsl(31, 93%, 40%);
+}
+
+.tw-social-ring-odnoklassniki {
+  --tw-ring-color: hsl(31, 93%, 48%);
+}
+
+.tw-social-ring-odnoklassniki-light {
+  --tw-ring-color: hsl(31, 93%, 96%);
+}
+
+.tw-social-ring-odnoklassniki-dark {
+  --tw-ring-color: hsl(31, 93%, 40%);
+}
+
+.tw-social-fill-odnoklassniki {
+  fill: hsl(31, 93%, 48%);
+}
+
+.tw-social-fill-odnoklassniki-light {
+  fill: hsl(31, 93%, 96%);
+}
+
+.tw-social-fill-odnoklassniki-dark {
+  fill: hsl(31, 93%, 40%);
+}
+
+.tw-social-stroke-odnoklassniki {
+  stroke: hsl(31, 93%, 48%);
+}
+
+.tw-social-stroke-odnoklassniki-light {
+  stroke: hsl(31, 93%, 96%);
+}
+
+.tw-social-stroke-odnoklassniki-dark {
+  stroke: hsl(31, 93%, 40%);
+}
+
+.tw-social-provider-openid {
+  --tw-social-color: hsl(25, 85%, 55%);
+  --tw-social-color-light: hsl(25, 85%, 96%);
+  --tw-social-color-dark: hsl(25, 85%, 40%);
+  --tw-social-color-hover: hsl(25, 85%, 50%);
+  --tw-social-color-active: hsl(25, 85%, 45%);
+  --tw-social-color-light-hover: hsl(25, 85%, 93.5%);
+  --tw-social-color-light-active: hsl(25, 85%, 91%);
+  --tw-social-color-dark-hover: hsl(25, 85%, 35%);
+  --tw-social-color-dark-active: hsl(25, 85%, 30%);
+  --tw-social-color-outline-active: hsl(25, 85%, 39%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(25, 85%, 55%);
+  --tw-social-btn-bg-hover: hsl(25, 85%, 50%);
+  --tw-social-btn-bg-active: hsl(25, 85%, 45%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(25, 85%, 55%);
+}
+
+.tw-social-bg-openid {
+  background-color: hsl(25, 85%, 55%);
+}
+
+.tw-social-bg-openid-light {
+  background-color: hsl(25, 85%, 96%);
+}
+
+.tw-social-bg-openid-dark {
+  background-color: hsl(25, 85%, 40%);
+}
+
+.tw-social-text-openid {
+  color: hsl(25, 85%, 55%);
+}
+
+.tw-social-text-openid-light {
+  color: hsl(25, 85%, 96%);
+}
+
+.tw-social-text-openid-dark {
+  color: hsl(25, 85%, 40%);
+}
+
+.tw-social-border-openid {
+  border-color: hsl(25, 85%, 55%);
+}
+
+.tw-social-border-openid-light {
+  border-color: hsl(25, 85%, 96%);
+}
+
+.tw-social-border-openid-dark {
+  border-color: hsl(25, 85%, 40%);
+}
+
+.tw-social-ring-openid {
+  --tw-ring-color: hsl(25, 85%, 55%);
+}
+
+.tw-social-ring-openid-light {
+  --tw-ring-color: hsl(25, 85%, 96%);
+}
+
+.tw-social-ring-openid-dark {
+  --tw-ring-color: hsl(25, 85%, 40%);
+}
+
+.tw-social-fill-openid {
+  fill: hsl(25, 85%, 55%);
+}
+
+.tw-social-fill-openid-light {
+  fill: hsl(25, 85%, 96%);
+}
+
+.tw-social-fill-openid-dark {
+  fill: hsl(25, 85%, 40%);
+}
+
+.tw-social-stroke-openid {
+  stroke: hsl(25, 85%, 55%);
+}
+
+.tw-social-stroke-openid-light {
+  stroke: hsl(25, 85%, 96%);
+}
+
+.tw-social-stroke-openid-dark {
+  stroke: hsl(25, 85%, 40%);
+}
+
+.tw-social-provider-pinterest {
+  --tw-social-color: hsl(350.9, 100%, 45.1%);
+  --tw-social-color-light: hsl(350.9, 100%, 96%);
+  --tw-social-color-dark: hsl(350.9, 100%, 45.1%);
+  --tw-social-color-hover: hsl(350.9, 100%, 40.1%);
+  --tw-social-color-active: hsl(350.9, 100%, 35.1%);
+  --tw-social-color-light-hover: hsl(350.9, 100%, 93.5%);
+  --tw-social-color-light-active: hsl(350.9, 100%, 91%);
+  --tw-social-color-dark-hover: hsl(350.9, 100%, 40.1%);
+  --tw-social-color-dark-active: hsl(350.9, 100%, 35.1%);
+  --tw-social-color-outline-active: hsl(350.9, 100%, 29.1%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(350.9, 100%, 45.1%);
+  --tw-social-btn-bg-hover: hsl(350.9, 100%, 40.1%);
+  --tw-social-btn-bg-active: hsl(350.9, 100%, 35.1%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(350.9, 100%, 45.1%);
+}
+
+.tw-social-bg-pinterest {
+  background-color: hsl(350.9, 100%, 45.1%);
+}
+
+.tw-social-bg-pinterest-light {
+  background-color: hsl(350.9, 100%, 96%);
+}
+
+.tw-social-bg-pinterest-dark {
+  background-color: hsl(350.9, 100%, 45.1%);
+}
+
+.tw-social-text-pinterest {
+  color: hsl(350.9, 100%, 45.1%);
+}
+
+.tw-social-text-pinterest-light {
+  color: hsl(350.9, 100%, 96%);
+}
+
+.tw-social-text-pinterest-dark {
+  color: hsl(350.9, 100%, 45.1%);
+}
+
+.tw-social-border-pinterest {
+  border-color: hsl(350.9, 100%, 45.1%);
+}
+
+.tw-social-border-pinterest-light {
+  border-color: hsl(350.9, 100%, 96%);
+}
+
+.tw-social-border-pinterest-dark {
+  border-color: hsl(350.9, 100%, 45.1%);
+}
+
+.tw-social-ring-pinterest {
+  --tw-ring-color: hsl(350.9, 100%, 45.1%);
+}
+
+.tw-social-ring-pinterest-light {
+  --tw-ring-color: hsl(350.9, 100%, 96%);
+}
+
+.tw-social-ring-pinterest-dark {
+  --tw-ring-color: hsl(350.9, 100%, 45.1%);
+}
+
+.tw-social-fill-pinterest {
+  fill: hsl(350.9, 100%, 45.1%);
+}
+
+.tw-social-fill-pinterest-light {
+  fill: hsl(350.9, 100%, 96%);
+}
+
+.tw-social-fill-pinterest-dark {
+  fill: hsl(350.9, 100%, 45.1%);
+}
+
+.tw-social-stroke-pinterest {
+  stroke: hsl(350.9, 100%, 45.1%);
+}
+
+.tw-social-stroke-pinterest-light {
+  stroke: hsl(350.9, 100%, 96%);
+}
+
+.tw-social-stroke-pinterest-dark {
+  stroke: hsl(350.9, 100%, 45.1%);
+}
+
+.tw-social-provider-reddit {
+  --tw-social-color: hsl(16.2, 100%, 50%);
+  --tw-social-color-light: hsl(16.2, 100%, 96%);
+  --tw-social-color-dark: hsl(16.2, 100%, 44%);
+  --tw-social-color-hover: hsl(16.2, 100%, 45%);
+  --tw-social-color-active: hsl(16.2, 100%, 40%);
+  --tw-social-color-light-hover: hsl(16.2, 100%, 93.5%);
+  --tw-social-color-light-active: hsl(16.2, 100%, 91%);
+  --tw-social-color-dark-hover: hsl(16.2, 100%, 39%);
+  --tw-social-color-dark-active: hsl(16.2, 100%, 34%);
+  --tw-social-color-outline-active: hsl(16.2, 100%, 34%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(16.2, 100%, 50%);
+  --tw-social-btn-bg-hover: hsl(16.2, 100%, 45%);
+  --tw-social-btn-bg-active: hsl(16.2, 100%, 40%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(16.2, 100%, 50%);
+}
+
+.tw-social-bg-reddit {
+  background-color: hsl(16.2, 100%, 50%);
+}
+
+.tw-social-bg-reddit-light {
+  background-color: hsl(16.2, 100%, 96%);
+}
+
+.tw-social-bg-reddit-dark {
+  background-color: hsl(16.2, 100%, 44%);
+}
+
+.tw-social-text-reddit {
+  color: hsl(16.2, 100%, 50%);
+}
+
+.tw-social-text-reddit-light {
+  color: hsl(16.2, 100%, 96%);
+}
+
+.tw-social-text-reddit-dark {
+  color: hsl(16.2, 100%, 44%);
+}
+
+.tw-social-border-reddit {
+  border-color: hsl(16.2, 100%, 50%);
+}
+
+.tw-social-border-reddit-light {
+  border-color: hsl(16.2, 100%, 96%);
+}
+
+.tw-social-border-reddit-dark {
+  border-color: hsl(16.2, 100%, 44%);
+}
+
+.tw-social-ring-reddit {
+  --tw-ring-color: hsl(16.2, 100%, 50%);
+}
+
+.tw-social-ring-reddit-light {
+  --tw-ring-color: hsl(16.2, 100%, 96%);
+}
+
+.tw-social-ring-reddit-dark {
+  --tw-ring-color: hsl(16.2, 100%, 44%);
+}
+
+.tw-social-fill-reddit {
+  fill: hsl(16.2, 100%, 50%);
+}
+
+.tw-social-fill-reddit-light {
+  fill: hsl(16.2, 100%, 96%);
+}
+
+.tw-social-fill-reddit-dark {
+  fill: hsl(16.2, 100%, 44%);
+}
+
+.tw-social-stroke-reddit {
+  stroke: hsl(16.2, 100%, 50%);
+}
+
+.tw-social-stroke-reddit-light {
+  stroke: hsl(16.2, 100%, 96%);
+}
+
+.tw-social-stroke-reddit-dark {
+  stroke: hsl(16.2, 100%, 44%);
+}
+
+.tw-social-provider-slack {
+  --tw-social-color: hsl(294, 54%, 27%);
+  --tw-social-color-light: hsl(294, 54%, 96%);
+  --tw-social-color-dark: hsl(294, 54%, 27%);
+  --tw-social-color-hover: hsl(294, 54%, 22%);
+  --tw-social-color-active: hsl(294, 54%, 17%);
+  --tw-social-color-light-hover: hsl(294, 54%, 93.5%);
+  --tw-social-color-light-active: hsl(294, 54%, 91%);
+  --tw-social-color-dark-hover: hsl(294, 54%, 22%);
+  --tw-social-color-dark-active: hsl(294, 54%, 17%);
+  --tw-social-color-outline-active: hsl(294, 54%, 11%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(294, 54%, 27%);
+  --tw-social-btn-bg-hover: hsl(294, 54%, 22%);
+  --tw-social-btn-bg-active: hsl(294, 54%, 17%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(294, 54%, 27%);
+}
+
+.tw-social-bg-slack {
+  background-color: hsl(294, 54%, 27%);
+}
+
+.tw-social-bg-slack-light {
+  background-color: hsl(294, 54%, 96%);
+}
+
+.tw-social-bg-slack-dark {
+  background-color: hsl(294, 54%, 27%);
+}
+
+.tw-social-text-slack {
+  color: hsl(294, 54%, 27%);
+}
+
+.tw-social-text-slack-light {
+  color: hsl(294, 54%, 96%);
+}
+
+.tw-social-text-slack-dark {
+  color: hsl(294, 54%, 27%);
+}
+
+.tw-social-border-slack {
+  border-color: hsl(294, 54%, 27%);
+}
+
+.tw-social-border-slack-light {
+  border-color: hsl(294, 54%, 96%);
+}
+
+.tw-social-border-slack-dark {
+  border-color: hsl(294, 54%, 27%);
+}
+
+.tw-social-ring-slack {
+  --tw-ring-color: hsl(294, 54%, 27%);
+}
+
+.tw-social-ring-slack-light {
+  --tw-ring-color: hsl(294, 54%, 96%);
+}
+
+.tw-social-ring-slack-dark {
+  --tw-ring-color: hsl(294, 54%, 27%);
+}
+
+.tw-social-fill-slack {
+  fill: hsl(294, 54%, 27%);
+}
+
+.tw-social-fill-slack-light {
+  fill: hsl(294, 54%, 96%);
+}
+
+.tw-social-fill-slack-dark {
+  fill: hsl(294, 54%, 27%);
+}
+
+.tw-social-stroke-slack {
+  stroke: hsl(294, 54%, 27%);
+}
+
+.tw-social-stroke-slack-light {
+  stroke: hsl(294, 54%, 96%);
+}
+
+.tw-social-stroke-slack-dark {
+  stroke: hsl(294, 54%, 27%);
+}
+
+.tw-social-provider-soundcloud {
+  --tw-social-color: hsl(20, 100%, 50%);
+  --tw-social-color-light: hsl(20, 100%, 96%);
+  --tw-social-color-dark: hsl(20, 100%, 42%);
+  --tw-social-color-hover: hsl(20, 100%, 45%);
+  --tw-social-color-active: hsl(20, 100%, 40%);
+  --tw-social-color-light-hover: hsl(20, 100%, 93.5%);
+  --tw-social-color-light-active: hsl(20, 100%, 91%);
+  --tw-social-color-dark-hover: hsl(20, 100%, 37%);
+  --tw-social-color-dark-active: hsl(20, 100%, 32%);
+  --tw-social-color-outline-active: hsl(20, 100%, 34%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(20, 100%, 50%);
+  --tw-social-btn-bg-hover: hsl(20, 100%, 45%);
+  --tw-social-btn-bg-active: hsl(20, 100%, 40%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(20, 100%, 50%);
+}
+
+.tw-social-bg-soundcloud {
+  background-color: hsl(20, 100%, 50%);
+}
+
+.tw-social-bg-soundcloud-light {
+  background-color: hsl(20, 100%, 96%);
+}
+
+.tw-social-bg-soundcloud-dark {
+  background-color: hsl(20, 100%, 42%);
+}
+
+.tw-social-text-soundcloud {
+  color: hsl(20, 100%, 50%);
+}
+
+.tw-social-text-soundcloud-light {
+  color: hsl(20, 100%, 96%);
+}
+
+.tw-social-text-soundcloud-dark {
+  color: hsl(20, 100%, 42%);
+}
+
+.tw-social-border-soundcloud {
+  border-color: hsl(20, 100%, 50%);
+}
+
+.tw-social-border-soundcloud-light {
+  border-color: hsl(20, 100%, 96%);
+}
+
+.tw-social-border-soundcloud-dark {
+  border-color: hsl(20, 100%, 42%);
+}
+
+.tw-social-ring-soundcloud {
+  --tw-ring-color: hsl(20, 100%, 50%);
+}
+
+.tw-social-ring-soundcloud-light {
+  --tw-ring-color: hsl(20, 100%, 96%);
+}
+
+.tw-social-ring-soundcloud-dark {
+  --tw-ring-color: hsl(20, 100%, 42%);
+}
+
+.tw-social-fill-soundcloud {
+  fill: hsl(20, 100%, 50%);
+}
+
+.tw-social-fill-soundcloud-light {
+  fill: hsl(20, 100%, 96%);
+}
+
+.tw-social-fill-soundcloud-dark {
+  fill: hsl(20, 100%, 42%);
+}
+
+.tw-social-stroke-soundcloud {
+  stroke: hsl(20, 100%, 50%);
+}
+
+.tw-social-stroke-soundcloud-light {
+  stroke: hsl(20, 100%, 96%);
+}
+
+.tw-social-stroke-soundcloud-dark {
+  stroke: hsl(20, 100%, 42%);
+}
+
+.tw-social-provider-tumblr {
+  --tw-social-color: hsl(209.5, 36.2%, 32%);
+  --tw-social-color-light: hsl(209.5, 36.2%, 96%);
+  --tw-social-color-dark: hsl(209.5, 36.2%, 32%);
+  --tw-social-color-hover: hsl(209.5, 36.2%, 27%);
+  --tw-social-color-active: hsl(209.5, 36.2%, 22%);
+  --tw-social-color-light-hover: hsl(209.5, 36.2%, 93.5%);
+  --tw-social-color-light-active: hsl(209.5, 36.2%, 91%);
+  --tw-social-color-dark-hover: hsl(209.5, 36.2%, 27%);
+  --tw-social-color-dark-active: hsl(209.5, 36.2%, 22%);
+  --tw-social-color-outline-active: hsl(209.5, 36.2%, 16%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(209.5, 36.2%, 32%);
+  --tw-social-btn-bg-hover: hsl(209.5, 36.2%, 27%);
+  --tw-social-btn-bg-active: hsl(209.5, 36.2%, 22%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(209.5, 36.2%, 32%);
+}
+
+.tw-social-bg-tumblr {
+  background-color: hsl(209.5, 36.2%, 32%);
+}
+
+.tw-social-bg-tumblr-light {
+  background-color: hsl(209.5, 36.2%, 96%);
+}
+
+.tw-social-bg-tumblr-dark {
+  background-color: hsl(209.5, 36.2%, 32%);
+}
+
+.tw-social-text-tumblr {
+  color: hsl(209.5, 36.2%, 32%);
+}
+
+.tw-social-text-tumblr-light {
+  color: hsl(209.5, 36.2%, 96%);
+}
+
+.tw-social-text-tumblr-dark {
+  color: hsl(209.5, 36.2%, 32%);
+}
+
+.tw-social-border-tumblr {
+  border-color: hsl(209.5, 36.2%, 32%);
+}
+
+.tw-social-border-tumblr-light {
+  border-color: hsl(209.5, 36.2%, 96%);
+}
+
+.tw-social-border-tumblr-dark {
+  border-color: hsl(209.5, 36.2%, 32%);
+}
+
+.tw-social-ring-tumblr {
+  --tw-ring-color: hsl(209.5, 36.2%, 32%);
+}
+
+.tw-social-ring-tumblr-light {
+  --tw-ring-color: hsl(209.5, 36.2%, 96%);
+}
+
+.tw-social-ring-tumblr-dark {
+  --tw-ring-color: hsl(209.5, 36.2%, 32%);
+}
+
+.tw-social-fill-tumblr {
+  fill: hsl(209.5, 36.2%, 32%);
+}
+
+.tw-social-fill-tumblr-light {
+  fill: hsl(209.5, 36.2%, 96%);
+}
+
+.tw-social-fill-tumblr-dark {
+  fill: hsl(209.5, 36.2%, 32%);
+}
+
+.tw-social-stroke-tumblr {
+  stroke: hsl(209.5, 36.2%, 32%);
+}
+
+.tw-social-stroke-tumblr-light {
+  stroke: hsl(209.5, 36.2%, 96%);
+}
+
+.tw-social-stroke-tumblr-dark {
+  stroke: hsl(209.5, 36.2%, 32%);
+}
+
+.tw-social-provider-twitter {
+  --tw-social-color: hsl(202.8, 89.1%, 53.1%);
+  --tw-social-color-light: hsl(202.8, 89.1%, 96%);
+  --tw-social-color-dark: hsl(202.8, 89.1%, 40%);
+  --tw-social-color-hover: hsl(202.8, 89.1%, 48.1%);
+  --tw-social-color-active: hsl(202.8, 89.1%, 43.1%);
+  --tw-social-color-light-hover: hsl(202.8, 89.1%, 93.5%);
+  --tw-social-color-light-active: hsl(202.8, 89.1%, 91%);
+  --tw-social-color-dark-hover: hsl(202.8, 89.1%, 35%);
+  --tw-social-color-dark-active: hsl(202.8, 89.1%, 30%);
+  --tw-social-color-outline-active: hsl(202.8, 89.1%, 37.1%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(202.8, 89.1%, 53.1%);
+  --tw-social-btn-bg-hover: hsl(202.8, 89.1%, 48.1%);
+  --tw-social-btn-bg-active: hsl(202.8, 89.1%, 43.1%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(202.8, 89.1%, 53.1%);
+}
+
+.tw-social-bg-twitter {
+  background-color: hsl(202.8, 89.1%, 53.1%);
+}
+
+.tw-social-bg-twitter-light {
+  background-color: hsl(202.8, 89.1%, 96%);
+}
+
+.tw-social-bg-twitter-dark {
+  background-color: hsl(202.8, 89.1%, 40%);
+}
+
+.tw-social-text-twitter {
+  color: hsl(202.8, 89.1%, 53.1%);
+}
+
+.tw-social-text-twitter-light {
+  color: hsl(202.8, 89.1%, 96%);
+}
+
+.tw-social-text-twitter-dark {
+  color: hsl(202.8, 89.1%, 40%);
+}
+
+.tw-social-border-twitter {
+  border-color: hsl(202.8, 89.1%, 53.1%);
+}
+
+.tw-social-border-twitter-light {
+  border-color: hsl(202.8, 89.1%, 96%);
+}
+
+.tw-social-border-twitter-dark {
+  border-color: hsl(202.8, 89.1%, 40%);
+}
+
+.tw-social-ring-twitter {
+  --tw-ring-color: hsl(202.8, 89.1%, 53.1%);
+}
+
+.tw-social-ring-twitter-light {
+  --tw-ring-color: hsl(202.8, 89.1%, 96%);
+}
+
+.tw-social-ring-twitter-dark {
+  --tw-ring-color: hsl(202.8, 89.1%, 40%);
+}
+
+.tw-social-fill-twitter {
+  fill: hsl(202.8, 89.1%, 53.1%);
+}
+
+.tw-social-fill-twitter-light {
+  fill: hsl(202.8, 89.1%, 96%);
+}
+
+.tw-social-fill-twitter-dark {
+  fill: hsl(202.8, 89.1%, 40%);
+}
+
+.tw-social-stroke-twitter {
+  stroke: hsl(202.8, 89.1%, 53.1%);
+}
+
+.tw-social-stroke-twitter-light {
+  stroke: hsl(202.8, 89.1%, 96%);
+}
+
+.tw-social-stroke-twitter-dark {
+  stroke: hsl(202.8, 89.1%, 40%);
+}
+
+.tw-social-provider-vimeo {
+  --tw-social-color: hsl(196.6, 100%, 46.9%);
+  --tw-social-color-light: hsl(196.6, 100%, 96%);
+  --tw-social-color-dark: hsl(196.6, 100%, 38%);
+  --tw-social-color-hover: hsl(196.6, 100%, 41.9%);
+  --tw-social-color-active: hsl(196.6, 100%, 36.9%);
+  --tw-social-color-light-hover: hsl(196.6, 100%, 93.5%);
+  --tw-social-color-light-active: hsl(196.6, 100%, 91%);
+  --tw-social-color-dark-hover: hsl(196.6, 100%, 33%);
+  --tw-social-color-dark-active: hsl(196.6, 100%, 28%);
+  --tw-social-color-outline-active: hsl(196.6, 100%, 30.9%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(196.6, 100%, 46.9%);
+  --tw-social-btn-bg-hover: hsl(196.6, 100%, 41.9%);
+  --tw-social-btn-bg-active: hsl(196.6, 100%, 36.9%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(196.6, 100%, 46.9%);
+}
+
+.tw-social-bg-vimeo {
+  background-color: hsl(196.6, 100%, 46.9%);
+}
+
+.tw-social-bg-vimeo-light {
+  background-color: hsl(196.6, 100%, 96%);
+}
+
+.tw-social-bg-vimeo-dark {
+  background-color: hsl(196.6, 100%, 38%);
+}
+
+.tw-social-text-vimeo {
+  color: hsl(196.6, 100%, 46.9%);
+}
+
+.tw-social-text-vimeo-light {
+  color: hsl(196.6, 100%, 96%);
+}
+
+.tw-social-text-vimeo-dark {
+  color: hsl(196.6, 100%, 38%);
+}
+
+.tw-social-border-vimeo {
+  border-color: hsl(196.6, 100%, 46.9%);
+}
+
+.tw-social-border-vimeo-light {
+  border-color: hsl(196.6, 100%, 96%);
+}
+
+.tw-social-border-vimeo-dark {
+  border-color: hsl(196.6, 100%, 38%);
+}
+
+.tw-social-ring-vimeo {
+  --tw-ring-color: hsl(196.6, 100%, 46.9%);
+}
+
+.tw-social-ring-vimeo-light {
+  --tw-ring-color: hsl(196.6, 100%, 96%);
+}
+
+.tw-social-ring-vimeo-dark {
+  --tw-ring-color: hsl(196.6, 100%, 38%);
+}
+
+.tw-social-fill-vimeo {
+  fill: hsl(196.6, 100%, 46.9%);
+}
+
+.tw-social-fill-vimeo-light {
+  fill: hsl(196.6, 100%, 96%);
+}
+
+.tw-social-fill-vimeo-dark {
+  fill: hsl(196.6, 100%, 38%);
+}
+
+.tw-social-stroke-vimeo {
+  stroke: hsl(196.6, 100%, 46.9%);
+}
+
+.tw-social-stroke-vimeo-light {
+  stroke: hsl(196.6, 100%, 96%);
+}
+
+.tw-social-stroke-vimeo-dark {
+  stroke: hsl(196.6, 100%, 38%);
+}
+
+.tw-social-provider-vk {
+  --tw-social-color: hsl(212, 42%, 52%);
+  --tw-social-color-light: hsl(212, 42%, 96%);
+  --tw-social-color-dark: hsl(212, 42%, 46%);
+  --tw-social-color-hover: hsl(212, 42%, 47%);
+  --tw-social-color-active: hsl(212, 42%, 42%);
+  --tw-social-color-light-hover: hsl(212, 42%, 93.5%);
+  --tw-social-color-light-active: hsl(212, 42%, 91%);
+  --tw-social-color-dark-hover: hsl(212, 42%, 41%);
+  --tw-social-color-dark-active: hsl(212, 42%, 36%);
+  --tw-social-color-outline-active: hsl(212, 42%, 36%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(212, 42%, 52%);
+  --tw-social-btn-bg-hover: hsl(212, 42%, 47%);
+  --tw-social-btn-bg-active: hsl(212, 42%, 42%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(212, 42%, 52%);
+}
+
+.tw-social-bg-vk {
+  background-color: hsl(212, 42%, 52%);
+}
+
+.tw-social-bg-vk-light {
+  background-color: hsl(212, 42%, 96%);
+}
+
+.tw-social-bg-vk-dark {
+  background-color: hsl(212, 42%, 46%);
+}
+
+.tw-social-text-vk {
+  color: hsl(212, 42%, 52%);
+}
+
+.tw-social-text-vk-light {
+  color: hsl(212, 42%, 96%);
+}
+
+.tw-social-text-vk-dark {
+  color: hsl(212, 42%, 46%);
+}
+
+.tw-social-border-vk {
+  border-color: hsl(212, 42%, 52%);
+}
+
+.tw-social-border-vk-light {
+  border-color: hsl(212, 42%, 96%);
+}
+
+.tw-social-border-vk-dark {
+  border-color: hsl(212, 42%, 46%);
+}
+
+.tw-social-ring-vk {
+  --tw-ring-color: hsl(212, 42%, 52%);
+}
+
+.tw-social-ring-vk-light {
+  --tw-ring-color: hsl(212, 42%, 96%);
+}
+
+.tw-social-ring-vk-dark {
+  --tw-ring-color: hsl(212, 42%, 46%);
+}
+
+.tw-social-fill-vk {
+  fill: hsl(212, 42%, 52%);
+}
+
+.tw-social-fill-vk-light {
+  fill: hsl(212, 42%, 96%);
+}
+
+.tw-social-fill-vk-dark {
+  fill: hsl(212, 42%, 46%);
+}
+
+.tw-social-stroke-vk {
+  stroke: hsl(212, 42%, 52%);
+}
+
+.tw-social-stroke-vk-light {
+  stroke: hsl(212, 42%, 96%);
+}
+
+.tw-social-stroke-vk-dark {
+  stroke: hsl(212, 42%, 46%);
+}
+
+.tw-social-provider-x {
+  --tw-social-color: hsl(0, 0%, 0%);
+  --tw-social-color-light: hsl(0, 0%, 96%);
+  --tw-social-color-dark: hsl(0, 0%, 0%);
+  --tw-social-color-hover: hsl(0, 0%, 0%);
+  --tw-social-color-active: hsl(0, 0%, 0%);
+  --tw-social-color-light-hover: hsl(0, 0%, 93.5%);
+  --tw-social-color-light-active: hsl(0, 0%, 91%);
+  --tw-social-color-dark-hover: hsl(0, 0%, 0%);
+  --tw-social-color-dark-active: hsl(0, 0%, 0%);
+  --tw-social-color-outline-active: hsl(0, 0%, 0%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(0, 0%, 0%);
+  --tw-social-btn-bg-hover: hsl(0, 0%, 0%);
+  --tw-social-btn-bg-active: hsl(0, 0%, 0%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(0, 0%, 0%);
+}
+
+.tw-social-bg-x {
+  background-color: hsl(0, 0%, 0%);
+}
+
+.tw-social-bg-x-light {
+  background-color: hsl(0, 0%, 96%);
+}
+
+.tw-social-bg-x-dark {
+  background-color: hsl(0, 0%, 0%);
+}
+
+.tw-social-text-x {
+  color: hsl(0, 0%, 0%);
+}
+
+.tw-social-text-x-light {
+  color: hsl(0, 0%, 96%);
+}
+
+.tw-social-text-x-dark {
+  color: hsl(0, 0%, 0%);
+}
+
+.tw-social-border-x {
+  border-color: hsl(0, 0%, 0%);
+}
+
+.tw-social-border-x-light {
+  border-color: hsl(0, 0%, 96%);
+}
+
+.tw-social-border-x-dark {
+  border-color: hsl(0, 0%, 0%);
+}
+
+.tw-social-ring-x {
+  --tw-ring-color: hsl(0, 0%, 0%);
+}
+
+.tw-social-ring-x-light {
+  --tw-ring-color: hsl(0, 0%, 96%);
+}
+
+.tw-social-ring-x-dark {
+  --tw-ring-color: hsl(0, 0%, 0%);
+}
+
+.tw-social-fill-x {
+  fill: hsl(0, 0%, 0%);
+}
+
+.tw-social-fill-x-light {
+  fill: hsl(0, 0%, 96%);
+}
+
+.tw-social-fill-x-dark {
+  fill: hsl(0, 0%, 0%);
+}
+
+.tw-social-stroke-x {
+  stroke: hsl(0, 0%, 0%);
+}
+
+.tw-social-stroke-x-light {
+  stroke: hsl(0, 0%, 96%);
+}
+
+.tw-social-stroke-x-dark {
+  stroke: hsl(0, 0%, 0%);
+}
+
+.tw-social-provider-yahoo {
+  --tw-social-color: hsl(266.7, 100%, 28.2%);
+  --tw-social-color-light: hsl(266.7, 100%, 96%);
+  --tw-social-color-dark: hsl(266.7, 100%, 28.2%);
+  --tw-social-color-hover: hsl(266.7, 100%, 23.2%);
+  --tw-social-color-active: hsl(266.7, 100%, 18.2%);
+  --tw-social-color-light-hover: hsl(266.7, 100%, 93.5%);
+  --tw-social-color-light-active: hsl(266.7, 100%, 91%);
+  --tw-social-color-dark-hover: hsl(266.7, 100%, 23.2%);
+  --tw-social-color-dark-active: hsl(266.7, 100%, 18.2%);
+  --tw-social-color-outline-active: hsl(266.7, 100%, 12.2%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(266.7, 100%, 28.2%);
+  --tw-social-btn-bg-hover: hsl(266.7, 100%, 23.2%);
+  --tw-social-btn-bg-active: hsl(266.7, 100%, 18.2%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(266.7, 100%, 28.2%);
+}
+
+.tw-social-bg-yahoo {
+  background-color: hsl(266.7, 100%, 28.2%);
+}
+
+.tw-social-bg-yahoo-light {
+  background-color: hsl(266.7, 100%, 96%);
+}
+
+.tw-social-bg-yahoo-dark {
+  background-color: hsl(266.7, 100%, 28.2%);
+}
+
+.tw-social-text-yahoo {
+  color: hsl(266.7, 100%, 28.2%);
+}
+
+.tw-social-text-yahoo-light {
+  color: hsl(266.7, 100%, 96%);
+}
+
+.tw-social-text-yahoo-dark {
+  color: hsl(266.7, 100%, 28.2%);
+}
+
+.tw-social-border-yahoo {
+  border-color: hsl(266.7, 100%, 28.2%);
+}
+
+.tw-social-border-yahoo-light {
+  border-color: hsl(266.7, 100%, 96%);
+}
+
+.tw-social-border-yahoo-dark {
+  border-color: hsl(266.7, 100%, 28.2%);
+}
+
+.tw-social-ring-yahoo {
+  --tw-ring-color: hsl(266.7, 100%, 28.2%);
+}
+
+.tw-social-ring-yahoo-light {
+  --tw-ring-color: hsl(266.7, 100%, 96%);
+}
+
+.tw-social-ring-yahoo-dark {
+  --tw-ring-color: hsl(266.7, 100%, 28.2%);
+}
+
+.tw-social-fill-yahoo {
+  fill: hsl(266.7, 100%, 28.2%);
+}
+
+.tw-social-fill-yahoo-light {
+  fill: hsl(266.7, 100%, 96%);
+}
+
+.tw-social-fill-yahoo-dark {
+  fill: hsl(266.7, 100%, 28.2%);
+}
+
+.tw-social-stroke-yahoo {
+  stroke: hsl(266.7, 100%, 28.2%);
+}
+
+.tw-social-stroke-yahoo-light {
+  stroke: hsl(266.7, 100%, 96%);
+}
+
+.tw-social-stroke-yahoo-dark {
+  stroke: hsl(266.7, 100%, 28.2%);
+}
+
+.tw-social-provider-youtube {
+  --tw-social-color: hsl(360, 100%, 50%);
+  --tw-social-color-light: hsl(360, 100%, 96%);
+  --tw-social-color-dark: hsl(360, 100%, 46%);
+  --tw-social-color-hover: hsl(360, 100%, 45%);
+  --tw-social-color-active: hsl(360, 100%, 40%);
+  --tw-social-color-light-hover: hsl(360, 100%, 93.5%);
+  --tw-social-color-light-active: hsl(360, 100%, 91%);
+  --tw-social-color-dark-hover: hsl(360, 100%, 41%);
+  --tw-social-color-dark-active: hsl(360, 100%, 36%);
+  --tw-social-color-outline-active: hsl(360, 100%, 34%);
+  --tw-social-on-color: #fff;
+  --tw-social-on-color-dark: #fff;
+  --tw-social-inverted-bg: #fff;
+  --tw-social-inverted-bg-hover: #f0f0f0;
+  --tw-social-inverted-bg-active: #e5e5e5;
+  --tw-social-btn-bg: hsl(360, 100%, 50%);
+  --tw-social-btn-bg-hover: hsl(360, 100%, 45%);
+  --tw-social-btn-bg-active: hsl(360, 100%, 40%);
+  --tw-social-btn-fg: #fff;
+  --tw-social-btn-fg-hover: #fff;
+  --tw-social-btn-fg-active: #fff;
+  --tw-social-btn-border: transparent;
+  --tw-social-btn-ring: hsl(360, 100%, 50%);
+}
+
+.tw-social-bg-youtube {
+  background-color: hsl(360, 100%, 50%);
+}
+
+.tw-social-bg-youtube-light {
+  background-color: hsl(360, 100%, 96%);
+}
+
+.tw-social-bg-youtube-dark {
+  background-color: hsl(360, 100%, 46%);
+}
+
+.tw-social-text-youtube {
+  color: hsl(360, 100%, 50%);
+}
+
+.tw-social-text-youtube-light {
+  color: hsl(360, 100%, 96%);
+}
+
+.tw-social-text-youtube-dark {
+  color: hsl(360, 100%, 46%);
+}
+
+.tw-social-border-youtube {
+  border-color: hsl(360, 100%, 50%);
+}
+
+.tw-social-border-youtube-light {
+  border-color: hsl(360, 100%, 96%);
+}
+
+.tw-social-border-youtube-dark {
+  border-color: hsl(360, 100%, 46%);
+}
+
+.tw-social-ring-youtube {
+  --tw-ring-color: hsl(360, 100%, 50%);
+}
+
+.tw-social-ring-youtube-light {
+  --tw-ring-color: hsl(360, 100%, 96%);
+}
+
+.tw-social-ring-youtube-dark {
+  --tw-ring-color: hsl(360, 100%, 46%);
+}
+
+.tw-social-fill-youtube {
+  fill: hsl(360, 100%, 50%);
+}
+
+.tw-social-fill-youtube-light {
+  fill: hsl(360, 100%, 96%);
+}
+
+.tw-social-fill-youtube-dark {
+  fill: hsl(360, 100%, 46%);
+}
+
+.tw-social-stroke-youtube {
+  stroke: hsl(360, 100%, 50%);
+}
+
+.tw-social-stroke-youtube-light {
+  stroke: hsl(360, 100%, 96%);
+}
+
+.tw-social-stroke-youtube-dark {
+  stroke: hsl(360, 100%, 46%);
+}
