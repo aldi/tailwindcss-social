@@ -81,6 +81,10 @@ export const providers = {
     name: 'Tumblr',
     color: 'hsl(209.5, 36.2%, 32%)',
   },
+  twitch: {
+    name: 'Twitch',
+    color: 'hsl(264.3, 100%, 63.7%)',
+  },
   twitter: {
     name: 'Twitter',
     color: 'hsl(202.8, 89.1%, 53.1%)',

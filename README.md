@@ -21,7 +21,7 @@
 
 ## ✨ Features
 
-- 🎨 **25 Providers** — All major social platforms included
+- 🎨 **26 Providers** — All major social platforms included
 - 🧩 **Tailwind CSS Native** — First-class Tailwind CSS plugin with namespaced `tw-social-*` classes
 - 📦 **Modular Imports** — Import only what you need, keep your bundle minimal
 - 🎭 **4 Variants** — Light, dark, outlined, and inverted button styles
@@ -126,9 +126,9 @@ export default {
 | `facebook` | `flickr` | `foursquare` | `github` |
 | `gitlab` | `instagram` | `linkedin` | `microsoft` |
 | `odnoklassniki` | `openid` | `pinterest` | `reddit` |
-| `slack` | `soundcloud` | `tumblr` | `twitter` |
-| `vimeo` | `vk` | `x` | `yahoo` |
-| `youtube` | | | |
+| `slack` | `soundcloud` | `tumblr` | `twitch` |
+| `twitter` | `vimeo` | `vk` | `x` |
+| `yahoo` | `youtube` | | |
 
 ## 💡 Usage Examples
 
