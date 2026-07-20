@@ -48,9 +48,14 @@ export default async function ProviderPage({ params }) {
         title={name}
         subtitle={
           <>
-            Styles and examples for <strong><code>.tw-social-btn</code></strong>{' '}
+            Styles and examples for{' '}
+            <strong>
+              <code>.tw-social-btn</code>
+            </strong>{' '}
             +{' '}
-            <strong><code>{`.tw-social-provider-${provider}`}</code></strong>
+            <strong>
+              <code>{`.tw-social-provider-${provider}`}</code>
+            </strong>
           </>
         }
       />
@@ -61,7 +66,7 @@ export default async function ProviderPage({ params }) {
               <Breadcrumb items={breadcrumbItems} />
 
               <div className={cardClassName}>
-                <p className={sectionTitleClassName}>Button Variants</p>
+                <h2 className={sectionTitleClassName}>Button Variants</h2>
                 <p className={sectionDescriptionClassName}>
                   Available variant modifiers:
                   <br />
@@ -75,63 +80,78 @@ export default async function ProviderPage({ params }) {
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <a className={`tw-social-btn tw-social-provider-${provider}`}>
+                  <button
+                    type="button"
+                    className={`tw-social-btn tw-social-provider-${provider}`}
+                  >
                     <i className={`fa-brands ${icon}`}></i>
 
                     <span>{name}</span>
-                  </a>
-                  <a className={`tw-social-btn tw-social-provider-${provider} tw-social-variant-outline`}>
+                  </button>
+                  <button
+                    type="button"
+                    className={`tw-social-btn tw-social-provider-${provider} tw-social-variant-outline`}
+                  >
                     <i className={`fa-brands ${icon}`}></i>
                     <span>Outlined</span>
-                  </a>
-                  <a className={`tw-social-btn tw-social-provider-${provider} tw-social-variant-light`}>
+                  </button>
+                  <button
+                    type="button"
+                    className={`tw-social-btn tw-social-provider-${provider} tw-social-variant-light`}
+                  >
                     <i className={`fa-brands ${icon}`}></i>
                     <span>Light</span>
-                  </a>
-                  <a className={`tw-social-btn tw-social-provider-${provider} tw-social-variant-dark`}>
+                  </button>
+                  <button
+                    type="button"
+                    className={`tw-social-btn tw-social-provider-${provider} tw-social-variant-dark`}
+                  >
                     <i className={`fa-brands ${icon}`}></i>
                     <span>Dark</span>
-                  </a>
-                  <a className={`tw-social-btn tw-social-provider-${provider} tw-social-variant-inverted`}>
+                  </button>
+                  <button
+                    type="button"
+                    className={`tw-social-btn tw-social-provider-${provider} tw-social-variant-inverted`}
+                  >
                     <i className={`fa-brands ${icon}`}></i>
                     <span>Inverted</span>
-                  </a>
+                  </button>
                 </div>
 
-                <CodeBlock language="html">{`<a class="tw-social-btn tw-social-provider-${provider}">
+                <CodeBlock language="html">{`<button type="button" class="tw-social-btn tw-social-provider-${provider}">
   <span class="icon">
     <i class="fa-brands ${icon}"></i>
   </span>
   <span>${name}</span>
-</a>
-<a class="tw-social-btn tw-social-provider-${provider} tw-social-variant-outline">
+</button>
+<button type="button" class="tw-social-btn tw-social-provider-${provider} tw-social-variant-outline">
   <span class="icon">
     <i class="fa-brands ${icon}"></i>
   </span>
   <span>Outlined</span>
-</a>
-<a class="tw-social-btn tw-social-provider-${provider} tw-social-variant-light">
+</button>
+<button type="button" class="tw-social-btn tw-social-provider-${provider} tw-social-variant-light">
   <span class="icon">
     <i class="fa-brands ${icon}"></i>
   </span>
   <span>Light</span>
-</a>
-<a class="tw-social-btn tw-social-provider-${provider} tw-social-variant-dark">
+</button>
+<button type="button" class="tw-social-btn tw-social-provider-${provider} tw-social-variant-dark">
   <span class="icon">
     <i class="fa-brands ${icon}"></i>
   </span>
   <span>Dark</span>
-</a>
-<a class="tw-social-btn tw-social-provider-${provider} tw-social-variant-inverted">
+</button>
+<button type="button" class="tw-social-btn tw-social-provider-${provider} tw-social-variant-inverted">
   <span class="icon">
     <i class="fa-brands ${icon}"></i>
   </span>
   <span>Inverted</span>
-</a>`}</CodeBlock>
+</button>`}</CodeBlock>
               </div>
 
               <div className={cardClassName}>
-                <p className={sectionTitleClassName}>Icon Buttons</p>
+                <h2 className={sectionTitleClassName}>Icon Buttons</h2>
                 <p className={sectionDescriptionClassName}>
                   Icon-only buttons, no text label.
                   <br />
@@ -141,110 +161,140 @@ export default async function ProviderPage({ params }) {
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <a className={`tw-social-btn tw-social-provider-${provider} tw-social-icon-only`} aria-label={name}>
+                  <button
+                    type="button"
+                    className={`tw-social-btn tw-social-provider-${provider} tw-social-icon-only`}
+                    aria-label={name}
+                  >
                     <i className={`fa-brands ${icon} fa-lg`}></i>
-                  </a>
-                  <a
+                  </button>
+                  <button
+                    type="button"
                     className={`tw-social-btn tw-social-provider-${provider} tw-social-variant-outline tw-social-icon-only`}
                     aria-label={`${name} outlined`}
                   >
                     <i className={`fa-brands ${icon} fa-lg`}></i>
-                  </a>
-                  <a
+                  </button>
+                  <button
+                    type="button"
                     className={`tw-social-btn tw-social-provider-${provider} tw-social-variant-light tw-social-icon-only`}
                     aria-label={`${name} light`}
                   >
                     <i className={`fa-brands ${icon} fa-lg`}></i>
-                  </a>
-                  <a
+                  </button>
+                  <button
+                    type="button"
                     className={`tw-social-btn tw-social-provider-${provider} tw-social-variant-dark tw-social-icon-only`}
                     aria-label={`${name} dark`}
                   >
                     <i className={`fa-brands ${icon} fa-lg`}></i>
-                  </a>
-                  <a
+                  </button>
+                  <button
+                    type="button"
                     className={`tw-social-btn tw-social-provider-${provider} tw-social-variant-inverted tw-social-icon-only`}
                     aria-label={`${name} inverted`}
                   >
                     <i className={`fa-brands ${icon} fa-lg`}></i>
-                  </a>
+                  </button>
                 </div>
 
-                <CodeBlock language="html">{`<a class="tw-social-btn tw-social-provider-${provider} tw-social-icon-only" aria-label="${name}">
+                <CodeBlock language="html">{`<button type="button" class="tw-social-btn tw-social-provider-${provider} tw-social-icon-only" aria-label="${name}">
   <i class="fa-brands ${icon} fa-lg"></i>
-</a>
-<a class="tw-social-btn tw-social-provider-${provider} tw-social-variant-outline tw-social-icon-only" aria-label="${name} outlined">
+</button>
+<button type="button" class="tw-social-btn tw-social-provider-${provider} tw-social-variant-outline tw-social-icon-only" aria-label="${name} outlined">
   <i class="fa-brands ${icon} fa-lg"></i>
-</a>
-<a class="tw-social-btn tw-social-provider-${provider} tw-social-variant-light tw-social-icon-only" aria-label="${name} light">
+</button>
+<button type="button" class="tw-social-btn tw-social-provider-${provider} tw-social-variant-light tw-social-icon-only" aria-label="${name} light">
   <i class="fa-brands ${icon} fa-lg"></i>
-</a>
-<a class="tw-social-btn tw-social-provider-${provider} tw-social-variant-dark tw-social-icon-only" aria-label="${name} dark">
+</button>
+<button type="button" class="tw-social-btn tw-social-provider-${provider} tw-social-variant-dark tw-social-icon-only" aria-label="${name} dark">
   <i class="fa-brands ${icon} fa-lg"></i>
-</a>
-<a class="tw-social-btn tw-social-provider-${provider} tw-social-variant-inverted tw-social-icon-only" aria-label="${name} inverted">
+</button>
+<button type="button" class="tw-social-btn tw-social-provider-${provider} tw-social-variant-inverted tw-social-icon-only" aria-label="${name} inverted">
   <i class="fa-brands ${icon} fa-lg"></i>
-</a>`}</CodeBlock>
+</button>`}</CodeBlock>
               </div>
 
               <div className={cardClassName}>
-                <p className={sectionTitleClassName}>Icon Placement</p>
+                <h2 className={sectionTitleClassName}>Icon Placement</h2>
                 <p className={sectionDescriptionClassName}>
-                  Use <code>.tw-social-icon-left</code> / <code>.tw-social-icon-right</code> for single-icon buttons.
+                  Use <code>.tw-social-icon-left</code> /{' '}
+                  <code>.tw-social-icon-right</code> for single-icon buttons.
                   <br />
-                  Use <code>data-icon=&quot;inline-start&quot;</code> / <code>data-icon=&quot;inline-end&quot;</code> for per-icon control (e.g., icons on both sides).
+                  Use <code>data-icon=&quot;inline-start&quot;</code> /{' '}
+                  <code>data-icon=&quot;inline-end&quot;</code> for per-icon
+                  control (e.g., icons on both sides).
                 </p>
 
-                <p className="text-sm font-semibold mb-2">Class modifiers (single-icon buttons)</p>
+                <p className="text-sm font-semibold mb-2">
+                  Class modifiers (single-icon buttons)
+                </p>
                 <div className="flex flex-wrap gap-2 mb-3">
-                  <a className={`tw-social-btn tw-social-provider-${provider} tw-social-icon-left`}>
+                  <button
+                    type="button"
+                    className={`tw-social-btn tw-social-provider-${provider} tw-social-icon-left`}
+                  >
                     <i className={`fa-brands ${icon}`}></i>
                     <span>Start</span>
-                  </a>
-                  <a className={`tw-social-btn tw-social-provider-${provider} tw-social-icon-right`}>
+                  </button>
+                  <button
+                    type="button"
+                    className={`tw-social-btn tw-social-provider-${provider} tw-social-icon-right`}
+                  >
                     <span>End</span>
                     <i className={`fa-brands ${icon}`}></i>
-                  </a>
+                  </button>
                 </div>
 
-                <p className="text-sm font-semibold mb-2">Data attribute markers (per-icon control)</p>
+                <p className="text-sm font-semibold mb-2">
+                  Data attribute markers (per-icon control)
+                </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <a className={`tw-social-btn tw-social-provider-${provider}`}>
+                  <button
+                    type="button"
+                    className={`tw-social-btn tw-social-provider-${provider}`}
+                  >
                     <i
                       className={`fa-brands ${icon}`}
                       data-icon="inline-start"
                     ></i>
                     <span>Marker Start</span>
-                  </a>
-                  <a className={`tw-social-btn tw-social-provider-${provider}`}>
+                  </button>
+                  <button
+                    type="button"
+                    className={`tw-social-btn tw-social-provider-${provider}`}
+                  >
                     <span>Marker End</span>
-                    <i className={`fa-brands ${icon}`} data-icon="inline-end"></i>
-                  </a>
+                    <i
+                      className={`fa-brands ${icon}`}
+                      data-icon="inline-end"
+                    ></i>
+                  </button>
                 </div>
 
                 <CodeBlock language="html">{`<!-- Class modifiers (single-icon buttons) -->
-<a class="tw-social-btn tw-social-provider-${provider} tw-social-icon-left">
+<button type="button" class="tw-social-btn tw-social-provider-${provider} tw-social-icon-left">
   <i class="fa-brands ${icon}"></i>
   <span>Start</span>
-</a>
-<a class="tw-social-btn tw-social-provider-${provider} tw-social-icon-right">
+</button>
+<button type="button" class="tw-social-btn tw-social-provider-${provider} tw-social-icon-right">
   <span>End</span>
   <i class="fa-brands ${icon}"></i>
-</a>
+</button>
 
 <!-- Data attribute markers (per-icon control) -->
-<a class="tw-social-btn tw-social-provider-${provider}">
+<button type="button" class="tw-social-btn tw-social-provider-${provider}">
   <i class="fa-brands ${icon}" data-icon="inline-start"></i>
   <span>Marker Start</span>
-</a>
-<a class="tw-social-btn tw-social-provider-${provider}">
+</button>
+<button type="button" class="tw-social-btn tw-social-provider-${provider}">
   <span>Marker End</span>
   <i class="fa-brands ${icon}" data-icon="inline-end"></i>
-</a>`}</CodeBlock>
+</button>`}</CodeBlock>
               </div>
 
               <div className={cardClassName}>
-                <p className={sectionTitleClassName}>Button Sizes</p>
+                <h2 className={sectionTitleClassName}>Button Sizes</h2>
                 <p className={sectionDescriptionClassName}>
                   Available sizes:
                   <br />
@@ -256,67 +306,83 @@ export default async function ProviderPage({ params }) {
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-4 items-center">
-                  <a className={`tw-social-btn tw-social-provider-${provider} tw-social-size-sm`}>
+                  <button
+                    type="button"
+                    className={`tw-social-btn tw-social-provider-${provider} tw-social-size-sm`}
+                  >
                     <span className="icon">
                       <i className={`fa-brands ${icon}`}></i>
                     </span>
                     <span>Small</span>
-                  </a>
-                  <a className={`tw-social-btn tw-social-provider-${provider}`}>
+                  </button>
+                  <button
+                    type="button"
+                    className={`tw-social-btn tw-social-provider-${provider}`}
+                  >
                     <span className="icon">
                       <i className={`fa-brands ${icon}`}></i>
                     </span>
                     <span>Normal</span>
-                  </a>
-                  <a className={`tw-social-btn tw-social-provider-${provider} tw-social-size-md`}>
+                  </button>
+                  <button
+                    type="button"
+                    className={`tw-social-btn tw-social-provider-${provider} tw-social-size-md`}
+                  >
                     <span className="icon">
                       <i className={`fa-brands ${icon}`}></i>
                     </span>
                     <span>Medium</span>
-                  </a>
-                  <a className={`tw-social-btn tw-social-provider-${provider} tw-social-size-lg`}>
+                  </button>
+                  <button
+                    type="button"
+                    className={`tw-social-btn tw-social-provider-${provider} tw-social-size-lg`}
+                  >
                     <span className="icon">
                       <i className={`fa-brands ${icon}`}></i>
                     </span>
                     <span>Large</span>
-                  </a>
+                  </button>
                 </div>
 
-                <CodeBlock language="html">{`<a class="tw-social-btn tw-social-provider-${provider} tw-social-size-sm">
+                <CodeBlock language="html">{`<button type="button" class="tw-social-btn tw-social-provider-${provider} tw-social-size-sm">
   <span class="icon">
     <i class="fa-brands ${icon}"></i>
   </span>
   <span>Small</span>
-</a>
-<a class="tw-social-btn tw-social-provider-${provider}">
+</button>
+<button type="button" class="tw-social-btn tw-social-provider-${provider}">
   <span class="icon">
     <i class="fa-brands ${icon}"></i>
   </span>
   <span>Normal</span>
-</a>
-<a class="tw-social-btn tw-social-provider-${provider} tw-social-size-md">
+</button>
+<button type="button" class="tw-social-btn tw-social-provider-${provider} tw-social-size-md">
   <span class="icon">
     <i class="fa-brands ${icon}"></i>
   </span>
   <span>Medium</span>
-</a>
-<a class="tw-social-btn tw-social-provider-${provider} tw-social-size-lg">
+</button>
+<button type="button" class="tw-social-btn tw-social-provider-${provider} tw-social-size-lg">
   <span class="icon">
     <i class="fa-brands ${icon}"></i>
   </span>
   <span>Large</span>
-</a>`}</CodeBlock>
+</button>`}</CodeBlock>
               </div>
 
               <div className={cardClassName}>
-                <p className={sectionTitleClassName}>Text Colors</p>
-                <p className={sectionDescriptionClassName}>Apply the provider color to any text</p>
+                <h2 className={sectionTitleClassName}>Text Colors</h2>
+                <p className={sectionDescriptionClassName}>
+                  Apply the provider color to any text
+                </p>
 
                 <div>
                   <p className={`text-xl tw-social-text-${provider} mb-0`}>
                     .tw-social-text-{provider}
                   </p>
-                  <p className={`text-xl tw-social-text-${provider}-light mb-0`}>
+                  <p
+                    className={`text-xl tw-social-text-${provider}-light mb-0`}
+                  >
                     .tw-social-text-{provider}-light
                   </p>
                   <p className={`text-xl tw-social-text-${provider}-dark mb-0`}>
@@ -330,17 +396,25 @@ export default async function ProviderPage({ params }) {
               </div>
 
               <div className={cardClassName}>
-                <p className={sectionTitleClassName}>Background Colors</p>
-                <p className={sectionDescriptionClassName}>Apply the provider color as a background</p>
+                <h2 className={sectionTitleClassName}>Background Colors</h2>
+                <p className={sectionDescriptionClassName}>
+                  Apply the provider color as a background
+                </p>
 
                 <div className="mb-4">
-                  <div className={`p-3 mb-1 rounded-sm tw-social-bg-${provider} text-white`}>
+                  <div
+                    className={`p-3 mb-1 rounded-sm tw-social-bg-${provider} text-white`}
+                  >
                     .tw-social-bg-{provider}
                   </div>
-                  <div className={`p-3 mb-1 rounded-sm tw-social-bg-${provider}-light`}>
+                  <div
+                    className={`p-3 mb-1 rounded-sm tw-social-bg-${provider}-light`}
+                  >
                     .tw-social-bg-{provider}-light
                   </div>
-                  <div className={`p-3 mb-1 rounded-sm tw-social-bg-${provider}-dark text-white`}>
+                  <div
+                    className={`p-3 mb-1 rounded-sm tw-social-bg-${provider}-dark text-white`}
+                  >
                     .tw-social-bg-{provider}-dark
                   </div>
                 </div>
@@ -357,19 +431,27 @@ export default async function ProviderPage({ params }) {
               </div>
 
               <div className={cardClassName}>
-                <p className={sectionTitleClassName}>Border, Ring, and SVG Utilities</p>
+                <h2 className={sectionTitleClassName}>
+                  Border, Ring, and SVG Utilities
+                </h2>
                 <p className={sectionDescriptionClassName}>
                   Use these helpers for borders, focus rings, and SVG coloring.
                 </p>
 
                 <div className="flex flex-wrap gap-4 mb-4">
-                  <div className={`px-3 py-2 rounded border-2 tw-social-border-${provider}`}>
+                  <div
+                    className={`px-3 py-2 rounded border-2 tw-social-border-${provider}`}
+                  >
                     .tw-social-border-{provider}
                   </div>
-                  <div className={`px-3 py-2 rounded border-2 tw-social-border-${provider}-light`}>
+                  <div
+                    className={`px-3 py-2 rounded border-2 tw-social-border-${provider}-light`}
+                  >
                     .tw-social-border-{provider}-light
                   </div>
-                  <div className={`px-3 py-2 rounded border-2 tw-social-border-${provider}-dark`}>
+                  <div
+                    className={`px-3 py-2 rounded border-2 tw-social-border-${provider}-dark`}
+                  >
                     .tw-social-border-{provider}-dark
                   </div>
                 </div>
@@ -428,7 +510,6 @@ export default async function ProviderPage({ params }) {
                   <span>Back to Providers</span>
                 </Link>
               </div>
-
             </div>
           </div>
         </div>

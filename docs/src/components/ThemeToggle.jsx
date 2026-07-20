@@ -18,9 +18,14 @@ export function ThemeToggle() {
   };
 
   return (
-    <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
-      <i className="fa-solid fa-sun icon-sun"></i>
-      <i className="fa-solid fa-moon icon-moon"></i>
+    <button
+      className="theme-toggle"
+      type="button"
+      onClick={toggleTheme}
+      aria-label="Toggle theme"
+    >
+      <i className="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
+      <i className="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
     </button>
   );
 }

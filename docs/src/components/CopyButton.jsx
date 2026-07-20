@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
 import { useEffect, useRef, useState } from 'react';
 
 export default function CopyButton({ code }) {
-  const [copied, setCopied] = useState(false);
+  const [status, setStatus] = useState('idle');
   const timeoutRef = useRef(null);
 
   useEffect(() => {
@@ -14,38 +14,37 @@ export default function CopyButton({ code }) {
     };
   }, []);
 
-  const handleCopy = async (e) => {
+  const handleCopy = async () => {
     try {
-      const target = e.currentTarget;
-      const figure = target.closest('figure');
-      const codeElement = figure?.querySelector('code');
-
-      if (codeElement) {
-        const range = document.createRange();
-        range.selectNodeContents(codeElement);
-        const selection = window.getSelection();
-        selection.removeAllRanges();
-        selection.addRange(range);
-      }
-
       await navigator.clipboard.writeText(code);
-      setCopied(true);
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-      timeoutRef.current = setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error("Failed to copy:", err);
+      setStatus('copied');
+    } catch {
+      setStatus('error');
     }
+
+    clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => setStatus('idle'), 2000);
   };
+
+  const copied = status === 'copied';
+  const message =
+    status === 'copied'
+      ? 'Code copied'
+      : status === 'error'
+        ? 'Unable to copy code'
+        : '';
 
   return (
     <button
       className="button is-small bd-copy"
       onClick={handleCopy}
-      title={copied ? "Copied!" : "Copy to clipboard"}
+      type="button"
+      title={copied ? 'Copied!' : 'Copy to clipboard'}
     >
-      {copied ? "Copied!" : "Copy"}
+      {copied ? 'Copied!' : 'Copy'}
+      <span className="sr-only" role="status" aria-live="polite">
+        {message}
+      </span>
     </button>
   );
 }

@@ -5,7 +5,7 @@ import CopyButton from './CopyButton';
 const getHighlighter = cache(async () => {
   return getSingletonHighlighter({
     themes: ['github-dark'],
-    langs: ['html', 'bash', 'javascript', 'scss'],
+    langs: ['html', 'bash', 'css', 'javascript', 'scss'],
   });
 });
 
@@ -18,10 +18,14 @@ function escapeHtml(value) {
     .replaceAll("'", '&#39;');
 }
 
-export default async function CodeBlock({ children, className, language = "html" }) {
+export default async function CodeBlock({
+  children,
+  className,
+  language = 'html',
+}) {
   let highlightedCode;
   const code = typeof children === 'string' ? children : String(children ?? '');
-  
+
   try {
     const highlighter = await getHighlighter();
     highlightedCode = highlighter.codeToHtml(code, {
@@ -29,12 +33,12 @@ export default async function CodeBlock({ children, className, language = "html"
       theme: 'github-dark',
     });
   } catch (error) {
-    console.error("Shiki highlighting error:", error);
+    console.error('Shiki highlighting error:', error);
     highlightedCode = `<pre><code>${escapeHtml(code)}</code></pre>`;
   }
 
   return (
-    <figure className={`highlight ${className || ""}`}>
+    <figure className={`highlight ${className || ''}`}>
       <CopyButton code={code} />
       <div
         className="shiki-wrapper"

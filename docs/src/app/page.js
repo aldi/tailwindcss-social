@@ -1,8 +1,14 @@
-import Link from "next/link";
-import { socialProviders } from "@/data/socialProviders";
-import CopyInstallButton from "@/components/CopyInstallButton";
+import Link from 'next/link';
+import { socialProviders } from '@/data/socialProviders';
+import CopyInstallButton from '@/components/CopyInstallButton';
 
-const INSTALL_COMMAND = "npm install tailwindcss-social";
+const INSTALL_COMMAND = 'npm install tailwindcss-social';
+
+export const metadata = {
+  alternates: {
+    canonical: '/tailwindcss-social',
+  },
+};
 
 function getOrbitPosition(index, total, radius, offsetAngle = 0) {
   const angle = (index / total) * 2 * Math.PI + offsetAngle - Math.PI / 2;
@@ -17,9 +23,18 @@ export default function Home() {
   const orbit2Count = Math.floor(totalProviders * 0.3);
 
   const orbits = [
-    { providers: socialProviders.slice(0, orbit1Count), className: "social-orbit" },
-    { providers: socialProviders.slice(orbit1Count, orbit1Count + orbit2Count), className: "social-orbit orbit-2" },
-    { providers: socialProviders.slice(orbit1Count + orbit2Count), className: "social-orbit orbit-3" },
+    {
+      providers: socialProviders.slice(0, orbit1Count),
+      className: 'social-orbit',
+    },
+    {
+      providers: socialProviders.slice(orbit1Count, orbit1Count + orbit2Count),
+      className: 'social-orbit orbit-2',
+    },
+    {
+      providers: socialProviders.slice(orbit1Count + orbit2Count),
+      className: 'social-orbit orbit-3',
+    },
   ];
 
   const renderOrbit = (providers, orbitClassName) => (
@@ -30,16 +45,20 @@ export default function Home() {
           <Link
             key={provider.code}
             href={`/docs/providers/${provider.code}`}
+            prefetch={false}
             className={`tw-social-btn tw-social-provider-${provider.code} tw-social-icon-only orbit-icon`}
             aria-label={provider.name}
             style={{
               left: `${pos.x}%`,
               top: `${pos.y}%`,
-              transform: "translate(-50%, -50%)",
+              transform: 'translate(-50%, -50%)',
             }}
           >
             <span className="icon">
-              <i className={`fa-brands ${provider.icon}`}></i>
+              <i
+                className={`fa-brands ${provider.icon}`}
+                aria-hidden="true"
+              ></i>
             </span>
           </Link>
         );
@@ -124,7 +143,8 @@ export default function Home() {
               {socialProviders.length} Providers
             </h3>
             <p className="feature-card-description">
-              All major social platforms — from Facebook and YouTube to Discord and Reddit.
+              All major social platforms — from Facebook and YouTube to Discord
+              and Reddit.
             </p>
           </div>
 
@@ -197,6 +217,7 @@ export default function Home() {
                 <Link
                   key={provider.code}
                   href={`/docs/providers/${provider.code}`}
+                  prefetch={false}
                   className={`tw-social-btn tw-social-provider-${provider.code}`}
                 >
                   <span className="icon">
@@ -215,6 +236,7 @@ export default function Home() {
                 <Link
                   key={provider.code}
                   href={`/docs/providers/${provider.code}`}
+                  prefetch={false}
                   className={`tw-social-btn tw-social-provider-${provider.code} tw-social-variant-outline`}
                 >
                   <span className="icon">
@@ -233,6 +255,7 @@ export default function Home() {
                 <Link
                   key={provider.code}
                   href={`/docs/providers/${provider.code}`}
+                  prefetch={false}
                   className={`tw-social-btn tw-social-provider-${provider.code} tw-social-variant-inverted`}
                 >
                   <span className="icon">
@@ -251,6 +274,7 @@ export default function Home() {
                 <Link
                   key={provider.code}
                   href={`/docs/providers/${provider.code}`}
+                  prefetch={false}
                   className={`tw-social-btn tw-social-provider-${provider.code} tw-social-variant-light`}
                 >
                   <span className="icon">
@@ -269,6 +293,7 @@ export default function Home() {
                 <Link
                   key={provider.code}
                   href={`/docs/providers/${provider.code}`}
+                  prefetch={false}
                   className={`tw-social-btn tw-social-provider-${provider.code} tw-social-variant-dark`}
                 >
                   <span className="icon">
@@ -287,6 +312,7 @@ export default function Home() {
                 <Link
                   key={provider.code}
                   href={`/docs/providers/${provider.code}`}
+                  prefetch={false}
                   className={`tw-social-btn tw-social-provider-${provider.code} tw-social-icon-only`}
                   aria-label={provider.name}
                 >
@@ -304,11 +330,11 @@ export default function Home() {
         <div className="home-footer-content">
           <div className="home-footer-left">
             <p>
-              Developed with <i className="fa-solid fa-heart heart-icon"></i> by{" "}
+              Developed with <i className="fa-solid fa-heart heart-icon"></i> by{' '}
               <a href="https://aldi.st">aldi</a>
             </p>
             <p className="mt-xs">
-              Licensed under{" "}
+              Licensed under{' '}
               <a href="https://opensource.org/licenses/mit-license.php">MIT</a>
             </p>
           </div>
@@ -317,15 +343,17 @@ export default function Home() {
               href="https://github.com/aldi/tailwindcss-social"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="TailwindCSS-Social on GitHub"
             >
-              <i className="fa-brands fa-github"></i>
+              <i className="fa-brands fa-github" aria-hidden="true"></i>
             </a>
             <a
               href="https://www.npmjs.com/package/tailwindcss-social"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="TailwindCSS-Social on npm"
             >
-              <i className="fa-brands fa-npm"></i>
+              <i className="fa-brands fa-npm" aria-hidden="true"></i>
             </a>
           </div>
         </div>

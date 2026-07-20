@@ -15,8 +15,8 @@ export default function DocsIndex() {
             const cols = 6;
             const row = Math.floor(index / cols);
             const col = index % cols;
-            const top = 10 + (row * 25) + ((col % 2) * 8);
-            const left = 5 + (col * 15) + ((row % 2) * 5);
+            const top = 10 + row * 25 + (col % 2) * 8;
+            const left = 5 + col * 15 + (row % 2) * 5;
             const delay = (index * 0.08) % 2;
 
             return (
@@ -45,7 +45,10 @@ export default function DocsIndex() {
         <div className="docs-container">
           <div className="flex flex-wrap -mx-3 py-6">
             <div className="px-3 w-full md:w-1/2 mb-6">
-              <Link className="glass-card is-fullheight" href="/docs/getting-started">
+              <Link
+                className="glass-card is-fullheight"
+                href="/docs/getting-started"
+              >
                 <div className="glass-card-icon is-warning">
                   <i className="fa-solid fa-rocket"></i>
                 </div>
@@ -54,13 +57,17 @@ export default function DocsIndex() {
                   <span className="arrow">→</span>
                 </h2>
                 <p className="glass-card-description">
-                  Start with either the <strong>Tailwind plugin</strong> or standalone CSS.
-                  Up and running in under 2 minutes via npm, CDN, or direct download.
+                  Start with either the <strong>Tailwind plugin</strong> or
+                  standalone CSS. Up and running in under 2 minutes via npm,
+                  CDN, or direct download.
                 </p>
               </Link>
             </div>
             <div className="px-3 w-full md:w-1/2 mb-6">
-              <Link className="glass-card is-fullheight" href="/docs/modularity">
+              <Link
+                className="glass-card is-fullheight"
+                href="/docs/modularity"
+              >
                 <div className="glass-card-icon is-success">
                   <i className="fa-solid fa-cubes"></i>
                 </div>
@@ -69,7 +76,8 @@ export default function DocsIndex() {
                   <span className="arrow">→</span>
                 </h2>
                 <p className="glass-card-description">
-                  Import only the providers you need — keep your bundle size minimal.
+                  Import only the providers you need — keep your bundle size
+                  minimal.
                 </p>
               </Link>
             </div>
@@ -83,13 +91,16 @@ export default function DocsIndex() {
                   <span className="arrow">→</span>
                 </h2>
                 <p className="glass-card-description">
-                  Browse all <strong>{socialProviders.length} providers</strong> with style examples,
-                  code snippets, and live previews.
+                  Browse all <strong>{socialProviders.length} providers</strong>{' '}
+                  with style examples, code snippets, and live previews.
                 </p>
               </Link>
             </div>
             <div className="px-3 w-full md:w-1/2 mb-6">
-              <Link className="glass-card is-fullheight" href="/docs/customization">
+              <Link
+                className="glass-card is-fullheight"
+                href="/docs/customization"
+              >
                 <div className="glass-card-icon is-danger">
                   <i className="fa-solid fa-paintbrush"></i>
                 </div>
@@ -98,7 +109,8 @@ export default function DocsIndex() {
                   <span className="arrow">→</span>
                 </h2>
                 <p className="glass-card-description">
-                  Build a <strong>custom bundle</strong> tailored to your color palette and brand.
+                  Build a <strong>custom bundle</strong> tailored to your color
+                  palette and brand.
                 </p>
               </Link>
             </div>
@@ -110,6 +122,7 @@ export default function DocsIndex() {
                 <Link
                   key={provider.code}
                   href={`/docs/providers/${provider.code}`}
+                  prefetch={false}
                   className={`brand-chip tw-social-bg-${provider.code}`}
                   title={provider.name}
                   aria-label={`${provider.name} documentation`}

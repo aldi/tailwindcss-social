@@ -5,19 +5,22 @@ import CodeBlock from '@/components/CodeBlock';
 import DocsCallout from '@/components/DocsCallout';
 
 export const metadata = {
-  title: "Getting Started - TailwindCSS-Social Docs",
+  title: 'Getting Started - TailwindCSS-Social Docs',
 };
 
 export default function StartPage() {
   const breadcrumbItems = [
-    { label: "TailwindCSS-Social", href: "/" },
-    { label: "Documentation", href: "/docs" },
-    { label: "Getting Started", active: true },
+    { label: 'TailwindCSS-Social', href: '/' },
+    { label: 'Documentation', href: '/docs' },
+    { label: 'Getting Started', active: true },
   ];
 
   return (
     <>
-      <Hero title="Getting Started" subtitle="Use as a Tailwind plugin or standalone CSS" />
+      <Hero
+        title="Getting Started"
+        subtitle="Use as a Tailwind plugin or standalone CSS"
+      />
       <section className="section py-12 px-6">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-wrap -mx-3">
@@ -55,23 +58,22 @@ bun add tailwindcss-social`}
                     Use as a <strong>Tailwind plugin</strong>:
                   </p>
                   <div className="mt-2">
-                    <CodeBlock language="javascript">{`import tailwindcssSocial from 'tailwindcss-social';
-
-export default {
-  plugins: [tailwindcssSocial()],
-};`}</CodeBlock>
+                    <CodeBlock language="css">{`@import "tailwindcss";
+@plugin "tailwindcss-social";`}</CodeBlock>
                   </div>
                   <p className="docs-text-muted text-base mt-3 mb-2">
                     Limit output to selected providers:
                   </p>
+                  <CodeBlock language="css">{`@plugin "tailwindcss-social" {
+  providers: github, linkedin, youtube;
+}`}</CodeBlock>
+                  <p className="docs-text-muted text-base mt-3 mb-2">
+                    JavaScript configuration is also supported:
+                  </p>
                   <CodeBlock language="javascript">{`import tailwindcssSocial from 'tailwindcss-social';
 
 export default {
-  plugins: [
-    tailwindcssSocial({
-      providers: ['github', 'linkedin', 'youtube'],
-    }),
-  ],
+  plugins: [tailwindcssSocial()],
 };`}</CodeBlock>
                 </div>
               </article>
@@ -100,7 +102,7 @@ import 'tailwindcss-social/css/single/linkedin/linkedin.min.css';`}</CodeBlock>
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="docs-text-strong text-xl font-semibold">
-                    Use the{" "}
+                    Use the{' '}
                     <a
                       className="docs-inline-link"
                       href="https://www.jsdelivr.com/"
@@ -108,7 +110,7 @@ import 'tailwindcss-social/css/single/linkedin/linkedin.min.css';`}</CodeBlock>
                       rel="noopener noreferrer"
                     >
                       jsDelivr
-                    </a>{" "}
+                    </a>{' '}
                     <strong>CDN</strong>
                     <br />
                     <a
@@ -145,23 +147,31 @@ import 'tailwindcss-social/css/single/linkedin/linkedin.min.css';`}</CodeBlock>
               <hr className="docs-divider my-6" />
 
               <div className="docs-info-banner overflow-hidden mb-6">
-                <div className="docs-info-banner-title px-4 py-2 font-semibold">Font Awesome icons</div>
+                <div className="docs-info-banner-title px-4 py-2 font-semibold">
+                  Font Awesome icons
+                </div>
                 <div className="docs-info-banner-body border border-t-0 px-4 py-3">
                   <p>
-                    To display icons, include{" "}
-                    <a className="docs-inline-link" href="https://fontawesome.com">
+                    To display icons, include{' '}
+                    <a
+                      className="docs-inline-link"
+                      href="https://fontawesome.com"
+                    >
                       Font Awesome 7
-                    </a>:
+                    </a>
+                    :
                   </p>
                   <div className="highlight-full header-code mt-2">
-                    <CodeBlock language="html">{`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/css/all.min.css">`}</CodeBlock>
+                    <CodeBlock language="html">{`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.0/css/all.min.css" integrity="sha384-sTlsophtwz/I4myskS3OIJf5VvEojkXKZyBTWZm0YD/K1pN7C5wpBPLyrsbr1SU2" crossorigin="anonymous">`}</CodeBlock>
                   </div>
                 </div>
               </div>
 
               <hr className="docs-divider my-6" />
 
-              <p className="docs-text-strong text-3xl font-bold pt-5">Starter Template</p>
+              <p className="docs-text-strong text-3xl font-bold pt-5">
+                Starter Template
+              </p>
               <p className="docs-text-muted text-lg mt-2 mb-4">
                 Copy this template to start right away:
               </p>
@@ -173,7 +183,7 @@ import 'tailwindcss-social/css/single/linkedin/linkedin.min.css';`}</CodeBlock>
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
 <!-- Your preferred icon library here -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.0/css/all.min.css" integrity="sha384-sTlsophtwz/I4myskS3OIJf5VvEojkXKZyBTWZm0YD/K1pN7C5wpBPLyrsbr1SU2" crossorigin="anonymous">
 <!-- Import all social provider styles from TailwindCSS-Social -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss-social@1/css/all.min.css">
 </head>`}</CodeBlock>
