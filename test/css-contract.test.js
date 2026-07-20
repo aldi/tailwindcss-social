@@ -51,7 +51,6 @@ test('emits required namespaced selectors and CSS variable contract', () => {
     '--tw-social-btn-bg',
     '--tw-social-btn-fg',
     '--tw-social-btn-border',
-    '--tw-social-btn-ring',
   ];
 
   for (const variableName of requiredVariables) {

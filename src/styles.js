@@ -11,7 +11,6 @@ import {
 const SELECTORS = {
   button: '.tw-social-btn',
   buttonHover: '.tw-social-btn:hover',
-  buttonFocus: '.tw-social-btn:focus-visible',
   buttonActive: '.tw-social-btn:active',
   buttonDisabled: '.tw-social-btn:disabled, .tw-social-btn.is-disabled',
   sizeSm: '.tw-social-btn.tw-social-size-sm',
@@ -64,11 +63,12 @@ export function generateBaseComponents() {
       color: 'var(--tw-social-btn-fg, var(--tw-social-on-color, #fff))',
       cursor: 'pointer',
       transition:
-        'background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease',
+        'background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease, transform 0.16s ease',
       userSelect: 'none',
       WebkitUserSelect: 'none',
-      '--tw-social-btn-ring':
-        'var(--tw-social-btn-ring, var(--tw-social-color, hsl(0, 0%, 0%)))',
+      '@media (prefers-reduced-motion: reduce)': {
+        transition: 'none',
+      },
     },
     [SELECTORS.buttonHover]: {
       backgroundColor:
@@ -77,11 +77,9 @@ export function generateBaseComponents() {
         'var(--tw-social-btn-fg-hover, var(--tw-social-btn-fg, var(--tw-social-on-color, #fff)))',
       textDecoration: 'none',
       transform: 'translateY(-1px)',
-    },
-    [SELECTORS.buttonFocus]: {
-      outline: 'none',
-      boxShadow:
-        '0 0 0 3px color-mix(in srgb, var(--tw-social-btn-ring) 35%, transparent)',
+      '@media (prefers-reduced-motion: reduce)': {
+        transform: 'none',
+      },
     },
     [SELECTORS.buttonActive]: {
       backgroundColor:
@@ -176,7 +174,6 @@ export function generateBaseComponents() {
       '--tw-social-btn-fg-hover': 'var(--tw-social-color-dark)',
       '--tw-social-btn-fg-active': 'var(--tw-social-color-dark)',
       '--tw-social-btn-border': 'transparent',
-      '--tw-social-btn-ring': 'var(--tw-social-color)',
     },
     [SELECTORS.variantDark]: {
       '--tw-social-btn-bg': 'var(--tw-social-color-dark)',
@@ -186,7 +183,6 @@ export function generateBaseComponents() {
       '--tw-social-btn-fg-hover': 'var(--tw-social-on-color-dark)',
       '--tw-social-btn-fg-active': 'var(--tw-social-on-color-dark)',
       '--tw-social-btn-border': 'transparent',
-      '--tw-social-btn-ring': 'var(--tw-social-color)',
     },
     [SELECTORS.variantOutline]: {
       '--tw-social-btn-bg': 'transparent',
@@ -196,7 +192,6 @@ export function generateBaseComponents() {
       '--tw-social-btn-fg-hover': 'var(--tw-social-on-color)',
       '--tw-social-btn-fg-active': '#fff',
       '--tw-social-btn-border': 'var(--tw-social-color)',
-      '--tw-social-btn-ring': 'var(--tw-social-color)',
     },
     [SELECTORS.variantInverted]: {
       '--tw-social-btn-bg': 'var(--tw-social-inverted-bg)',
@@ -206,15 +201,6 @@ export function generateBaseComponents() {
       '--tw-social-btn-fg-hover': 'var(--tw-social-color)',
       '--tw-social-btn-fg-active': 'var(--tw-social-color)',
       '--tw-social-btn-border': 'transparent',
-      '--tw-social-btn-ring': 'var(--tw-social-color)',
-    },
-    '@media (prefers-reduced-motion: reduce)': {
-      [SELECTORS.button]: {
-        transition: 'none',
-      },
-      [SELECTORS.buttonHover]: {
-        transform: 'none',
-      },
     },
   };
 }
@@ -253,7 +239,6 @@ export function generateProviderComponents(name, provider) {
       '--tw-social-btn-fg-hover': variants.solid.fgHover,
       '--tw-social-btn-fg-active': variants.solid.fgActive,
       '--tw-social-btn-border': variants.solid.border,
-      '--tw-social-btn-ring': variants.solid.ring,
     },
   };
 }

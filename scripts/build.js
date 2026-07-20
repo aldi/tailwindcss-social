@@ -30,7 +30,7 @@ const BANNER = `/*! tailwindcss-social v${pkg.version} | MIT License | github.co
  * @returns {string}
  */
 function toKebabCase(str) {
-  return str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+  return str.replace(/([A-Z])/g, '-$1').toLowerCase();
 }
 
 /**
@@ -41,8 +41,36 @@ function toKebabCase(str) {
  */
 function styleToCSS(styles, indent = '  ') {
   return Object.entries(styles)
+    .filter(([, value]) => typeof value !== 'object')
     .map(([prop, value]) => `${indent}${toKebabCase(prop)}: ${value};`)
     .join('\n');
+}
+
+/**
+ * Convert one selector and its declarations, including nested at-rules, to CSS.
+ * @param {string} selector
+ * @param {Record<string, string|Record<string, string>>} styles
+ * @param {string} indent
+ * @returns {string}
+ */
+function ruleToCSS(selector, styles, indent = '') {
+  const declarations = styleToCSS(styles, `${indent}  `);
+  const blocks = [];
+
+  if (declarations) {
+    blocks.push(`${indent}${selector} {\n${declarations}\n${indent}}`);
+  }
+
+  for (const [name, nestedStyles] of Object.entries(styles)) {
+    if (!name.startsWith('@') || typeof nestedStyles !== 'object') {
+      continue;
+    }
+
+    const nestedRule = ruleToCSS(selector, nestedStyles, `${indent}  `);
+    blocks.push(`${indent}${name} {\n${nestedRule}\n${indent}}`);
+  }
+
+  return blocks.join('\n\n');
 }
 
 /**
@@ -59,7 +87,7 @@ function componentsToCSS(components, indent = '') {
         return `${indent}${selector} {\n${componentsToCSS(styles, `${indent}  `)}\n${indent}}`;
       }
 
-      return `${indent}${selector} {\n${styleToCSS(styles, `${indent}  `)}\n${indent}}`;
+      return ruleToCSS(selector, styles, indent);
     })
     .join('\n\n');
 }
@@ -97,9 +125,10 @@ async function buildCSS(css, outputDir, outputName) {
 
   console.log(`Building: ${outputName}`);
 
-  fs.writeFileSync(outputFile, BANNER + css);
+  const source = BANNER + css;
+  fs.writeFileSync(outputFile, source);
 
-  const minified = await postcss([cssnano]).process(css, {
+  const minified = await postcss([cssnano]).process(source, {
     from: undefined,
     to: outputMinFile,
   });

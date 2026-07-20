@@ -27,7 +27,7 @@
 - 🎭 **4 Variants** — Light, dark, outlined, and inverted button styles
 - 🔧 **Framework Agnostic** — Works with React, Vue, Angular, Svelte, or plain HTML
 - 🎯 **Any Icon Library** — Compatible with Font Awesome, Material Icons, Ionicons, and more
-- ♿ **Accessible** — Built-in focus and disabled states
+- ♿ **Keyboard Ready** — Visible focus, reduced-motion, and disabled states
 - 🎛️ **Token-Driven** — Full CSS variable contract for custom theming
 
 ## 📦 Installation
@@ -215,7 +215,6 @@ Button runtime variables:
 --tw-social-btn-bg
 --tw-social-btn-fg
 --tw-social-btn-border
---tw-social-btn-ring
 ```
 
 ## 📖 Documentation

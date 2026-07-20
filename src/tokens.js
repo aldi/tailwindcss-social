@@ -73,7 +73,6 @@ export function buildButtonVariantTokens(tokens) {
       fgHover: tokens.onColor,
       fgActive: tokens.onColor,
       border: 'transparent',
-      ring: tokens.color,
     },
     light: {
       bg: tokens.colorLight,
@@ -83,7 +82,6 @@ export function buildButtonVariantTokens(tokens) {
       fgHover: tokens.colorDark,
       fgActive: tokens.colorDark,
       border: 'transparent',
-      ring: tokens.color,
     },
     dark: {
       bg: tokens.colorDark,
@@ -93,7 +91,6 @@ export function buildButtonVariantTokens(tokens) {
       fgHover: tokens.onColorDark,
       fgActive: tokens.onColorDark,
       border: 'transparent',
-      ring: tokens.color,
     },
     outline: {
       bg: 'transparent',
@@ -103,7 +100,6 @@ export function buildButtonVariantTokens(tokens) {
       fgHover: tokens.onColor,
       fgActive: '#fff',
       border: tokens.color,
-      ring: tokens.color,
     },
     inverted: {
       bg: tokens.invertedBg,
@@ -113,7 +109,6 @@ export function buildButtonVariantTokens(tokens) {
       fgHover: tokens.color,
       fgActive: tokens.color,
       border: 'transparent',
-      ring: tokens.color,
     },
   };
 }
