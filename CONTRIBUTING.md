@@ -39,7 +39,7 @@ Thank you for your interest in contributing! Here's how you can help.
 1. Create a feature branch from `main`
 2. Make your changes
 3. Update documentation if needed
-4. If you changed anything in `src/`, run `npm run build` and include updated files in `css/` and `docs/public/all.min.css`
+4. If you changed anything in `src/`, run `npm run build` to verify the build output locally — generated files in `css/` and `docs/public/all.min.css` are build artifacts and are not committed
 5. Run quality checks before opening the PR:
    ```bash
    npm run lint

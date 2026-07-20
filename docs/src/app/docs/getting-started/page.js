@@ -126,24 +126,6 @@ import 'tailwindcss-social/css/single/linkedin/linkedin.min.css';`}</CodeBlock>
                 </div>
               </article>
 
-              <article className="flex gap-4 mb-6">
-                <div className="flex-shrink-0">
-                  <p className="docs-text-strong text-xl font-semibold">5</p>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="docs-text-strong text-xl font-semibold">
-                    Download from the <strong>repository</strong>
-                    <br />
-                    <a
-                      className="docs-inline-link"
-                      href="https://github.com/aldi/tailwindcss-social/tree/main/css"
-                    >
-                      https://github.com/aldi/tailwindcss-social/tree/main/css
-                    </a>
-                  </p>
-                </div>
-              </article>
-
               <hr className="docs-divider my-6" />
 
               <div className="docs-info-banner overflow-hidden mb-6">

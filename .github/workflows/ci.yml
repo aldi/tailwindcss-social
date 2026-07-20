@@ -32,9 +32,6 @@ jobs:
       - name: Build package CSS
         run: npm run build
 
-      - name: Verify generated assets are committed
-        run: git diff --exit-code -- css docs/public/all.min.css
-
   docs:
     runs-on: ubuntu-latest
     steps:

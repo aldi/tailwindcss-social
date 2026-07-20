@@ -163,11 +163,12 @@ async function buildSingle() {
  * Keep docs CSS in sync with the generated root artifact.
  */
 function syncDocsCSS() {
-  if (!fs.existsSync(DOCS_PUBLIC_DIR)) {
-    console.log(`  • Skipped docs sync (missing ${DOCS_PUBLIC_DIR})`);
+  if (!fs.existsSync(path.join(ROOT, 'docs'))) {
+    console.log(`  • Skipped docs sync (missing ${path.join(ROOT, 'docs')})`);
     return;
   }
 
+  fs.mkdirSync(DOCS_PUBLIC_DIR, { recursive: true });
   fs.copyFileSync(path.join(CSS_DIR, 'all.min.css'), DOCS_ALL_MIN_FILE);
   console.log(`  ✓ ${DOCS_ALL_MIN_FILE}`);
 }
