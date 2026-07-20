@@ -8,7 +8,7 @@ function renderComponents(options) {
   let components = {};
   const plugin = tailwindcssSocial(options);
 
-  plugin({
+  plugin.handler({
     addComponents(value) {
       components = value;
     },
@@ -185,10 +185,17 @@ test('providers option limits output to selected providers', () => {
   assert.equal(components['.tw-social-bg-github'], undefined);
 });
 
-test('providers option rejects non-array values', () => {
+test('providers option accepts a single provider name', () => {
+  const components = renderComponents({ providers: 'facebook' });
+
+  assert.ok(components['.tw-social-provider-facebook']);
+  assert.equal(components['.tw-social-provider-github'], undefined);
+});
+
+test('providers option rejects non-string and non-array values', () => {
   assert.throws(
-    () => renderComponents({ providers: 'facebook' }),
-    /must be an array of provider names/i
+    () => renderComponents({ providers: { name: 'facebook' } }),
+    /must be a provider name or an array of provider names/i
   );
 });
 

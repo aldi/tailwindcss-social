@@ -79,6 +79,23 @@ import 'tailwindcss-social/css/single/linkedin/linkedin.min.css';
 
 ### Tailwind Plugin
 
+Tailwind CSS v4 projects can load the plugin directly from CSS:
+
+```css
+@import "tailwindcss";
+@plugin "tailwindcss-social";
+```
+
+Limit the generated providers when using CSS-first configuration:
+
+```css
+@plugin "tailwindcss-social" {
+  providers: github, linkedin, youtube;
+}
+```
+
+JavaScript configuration is also supported:
+
 ```js
 import tailwindcssSocial from 'tailwindcss-social';
 

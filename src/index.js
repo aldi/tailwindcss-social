@@ -7,9 +7,11 @@
  * import tailwindcssSocial from 'tailwindcss-social';
  *
  * export default {
- *   plugins: [tailwindcssSocial],
+ *   plugins: [tailwindcssSocial()],
  * };
  */
+
+import plugin from 'tailwindcss/plugin';
 
 import { providers, providerNames } from './providers.js';
 import { buildProviderColorTokens } from './tokens.js';
@@ -49,13 +51,16 @@ function resolveSelectedProviders(providersOption) {
     return providerNames;
   }
 
-  if (!Array.isArray(providersOption)) {
+  const requestedProviders =
+    typeof providersOption === 'string' ? [providersOption] : providersOption;
+
+  if (!Array.isArray(requestedProviders)) {
     throw new TypeError(
-      'tailwindcss-social: "providers" option must be an array of provider names.'
+      'tailwindcss-social: "providers" option must be a provider name or an array of provider names.'
     );
   }
 
-  const uniqueProviders = [...new Set(providersOption)];
+  const uniqueProviders = [...new Set(requestedProviders)];
   const invalidProviders = uniqueProviders.filter(
     (name) => !Object.hasOwn(providers, name)
   );
@@ -71,10 +76,10 @@ function resolveSelectedProviders(providersOption) {
 
 /**
  * Tailwind CSS plugin factory.
- * @param {{providers?: string[]}} [options]
+ * @param {{providers?: string|string[]}} [options]
  * @returns {(api: {addComponents: (components: Record<string, object>) => void}) => void}
  */
-export default function tailwindcssSocial(options = {}) {
+function createSocialPlugin(options = {}) {
   const selectedProviders = resolveSelectedProviders(options.providers);
 
   return function ({ addComponents }) {
@@ -95,8 +100,9 @@ export default function tailwindcssSocial(options = {}) {
   };
 }
 
+const tailwindcssSocial = plugin.withOptions(createSocialPlugin);
+
 // Also export theme extension for manual configuration.
 tailwindcssSocial.colors = buildThemeColors();
 
-// Export for CommonJS compatibility.
-tailwindcssSocial.default = tailwindcssSocial;
+export default tailwindcssSocial;

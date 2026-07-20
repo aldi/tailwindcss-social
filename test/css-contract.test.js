@@ -7,7 +7,7 @@ function renderComponents(options) {
   let components = {};
   const plugin = tailwindcssSocial(options);
 
-  plugin({
+  plugin.handler({
     addComponents(value) {
       components = value;
     },
